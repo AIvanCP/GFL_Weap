@@ -51,6 +51,11 @@
 				<canTargetPawns>false</canTargetPawns>
 				<canTargetBuildings>false</canTargetBuildings>
 			</targetParams>
+			<!-- AoE visual preview circle -->
+			<targetAoEProps>
+				<radius>3</radius>
+				<showTargetingCells>true</showTargetingCells>
+			</targetAoEProps>
 		</verbProperties>
 	</AbilityDef>
 

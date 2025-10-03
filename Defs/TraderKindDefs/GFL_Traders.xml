@@ -14,12 +14,19 @@
 	</TraderKindDef>
 
 	<!-- Patch: Add GFL weapons to existing Orbital Combat Supplier -->
-	<TraderKindDef ParentName="Base_Orbital_Trader">
-		<defName>Orbital_CombatSupplier</defName>
+	<!-- Note: Removed ParentName as Base_Orbital_Trader doesn't exist in vanilla RimWorld 1.5/1.6 -->
+	<!-- This is a minimal standalone trader that can appear in orbital trade ships -->
+	<TraderKindDef>
+		<defName>GFL_OrbitalCombatSupplier</defName>
+		<label>combat supplier</label>
 		<stockGenerators>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>GFL_Weapon_Suomi</thingDef>
 				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_MarketValue">
+				<tradeTag>WeaponRanged</tradeTag>
+				<countRange>3~7</countRange>
 			</li>
 		</stockGenerators>
 	</TraderKindDef>

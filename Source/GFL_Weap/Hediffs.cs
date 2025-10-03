@@ -55,6 +55,12 @@ namespace GFL_Weap
                     {
                         MoteMaker.MakeAttachedOverlay(pawn, moteDef, Vector3.zero, 1f);
                     }
+                    
+                    // Floating text instead of message log
+                    if (pawn?.Map != null)
+                    {
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Frost Barrier +80", Color.cyan, 2f);
+                    }
                 }
             }
             catch (Exception ex)
@@ -136,6 +142,11 @@ namespace GFL_Weap
                         if (pawn?.Map != null)
                         {
                             FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 0.5f);
+                            
+                            if (pawn?.Map != null)
+                            {
+                                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, $"Absorbed {Mathf.RoundToInt(damageAmount)}", Color.white, 1.8f);
+                            }
                         }
                     }
                     else
@@ -150,6 +161,8 @@ namespace GFL_Weap
                         {
                             FleckMaker.Static(pawn.DrawPos, pawn.Map, FleckDefOf.ExplosionFlash, 1f);
                             MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Shield broken!", Color.red, 2f);
+                            
+                            
                         }
                     }
                 }

@@ -48,7 +48,8 @@ namespace GFL_Weap
                     List<Pawn> enemiesHit = new List<Pawn>();
                     foreach (IntVec3 cell in affectedCells)
                     {
-                        List<Thing> things = cell.GetThingList(map);
+                        // Copy list to avoid collection modification during enumeration
+                        List<Thing> things = cell.GetThingList(map).ToList();
                         foreach (Thing thing in things)
                         {
                             if (thing is Pawn pawn && !pawn.Dead && pawn.Faction != Faction.OfPlayer)
@@ -235,7 +236,8 @@ namespace GFL_Weap
                         // Check for pawns on frost terrain and apply debuff
                         if (data.map != null && data.cell.InBounds(data.map))
                         {
-                            List<Thing> things = data.cell.GetThingList(data.map);
+                            // Copy list to avoid collection modification during enumeration
+                            List<Thing> things = data.cell.GetThingList(data.map).ToList();
                             foreach (Thing thing in things)
                             {
                                 if (thing is Pawn pawn && !pawn.Dead && pawn.Faction != Faction.OfPlayer)
