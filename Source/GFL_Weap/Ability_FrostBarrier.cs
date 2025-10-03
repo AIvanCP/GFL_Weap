@@ -220,25 +220,35 @@ namespace GFL_Weap
                 {
                     if (currentTick >= data.expireTick)
                     {
-                        // Revert terrain (just remove, let natural terrain show)
+                        // Revert terrain to original
+                        if (data.map != null && data.cell.InBounds(data.map))
+                        {
+                            if (data.originalTerrain != null)
+                            {
+                                data.map.terrainGrid.SetTerrain(data.cell, data.originalTerrain);
+                            }
+                        }
                         toRemove.Add(data);
                     }
                     else
                     {
                         // Check for pawns on frost terrain and apply debuff
-                        List<Thing> things = data.cell.GetThingList(data.map);
-                        foreach (Thing thing in things)
+                        if (data.map != null && data.cell.InBounds(data.map))
                         {
-                            if (thing is Pawn pawn && !pawn.Dead && pawn.Faction != Faction.OfPlayer)
+                            List<Thing> things = data.cell.GetThingList(data.map);
+                            foreach (Thing thing in things)
                             {
-                                HediffDef frostTerrainDef = DefDatabase<HediffDef>.GetNamedSilentFail("GFL_Hediff_FrostTerrain");
-                                if (frostTerrainDef != null)
+                                if (thing is Pawn pawn && !pawn.Dead && pawn.Faction != Faction.OfPlayer)
                                 {
-                                    Hediff existing = pawn.health.hediffSet.GetFirstHediffOfDef(frostTerrainDef);
-                                    if (existing == null)
+                                    HediffDef frostTerrainDef = DefDatabase<HediffDef>.GetNamedSilentFail("GFL_Hediff_FrostTerrain");
+                                    if (frostTerrainDef != null)
                                     {
-                                        Hediff frostDebuff = HediffMaker.MakeHediff(frostTerrainDef, pawn);
-                                        pawn.health.AddHediff(frostDebuff);
+                                        Hediff existing = pawn.health.hediffSet.GetFirstHediffOfDef(frostTerrainDef);
+                                        if (existing == null)
+                                        {
+                                            Hediff frostDebuff = HediffMaker.MakeHediff(frostTerrainDef, pawn);
+                                            pawn.health.AddHediff(frostDebuff);
+                                        }
                                     }
                                 }
                             }

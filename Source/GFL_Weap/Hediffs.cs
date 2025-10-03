@@ -13,7 +13,7 @@ namespace GFL_Weap
     public class Hediff_FrostBarrier : HediffWithComps
     {
         private int ticksRemaining = 1800; // 30 seconds
-        private float shieldHitPoints = 80f;
+        public float shieldHitPoints = 80f; // Public so HediffComp can access
         private const float maxShieldHP = 80f;
         private const float healPerSecond = 1f;
         private int tickCounter = 0;
