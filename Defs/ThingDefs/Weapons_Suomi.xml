@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Suomi SMG Weapon -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>GFL_Weapon_Suomi</defName>
+		<label>Suomi SMG</label>
+		<description>A Finnish submachine gun with advanced frost-based combat systems. When equipped, grants the wielder access to Freeze Shot and Frost Barrier abilities.</description>
+		<techLevel>Industrial</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Suomi/Suomi_smg</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<Mass>3.2</Mass>
+			<AccuracyTouch>0.70</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.45</AccuracyMedium>
+			<AccuracyLong>0.35</AccuracyLong>
+			<RangedWeapon_Cooldown>1.60</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun</li>
+			<li>ShortShots</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_SuomiSMG</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>24</range>
+				<burstShotCount>3</burstShotCount>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<soundCast>Shot_MachinePistol</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="GFL_Weap.CompProperties_WeaponAbilities">
+				<abilities>
+					<li>GFL_Ability_FreezeShot</li>
+					<li>GFL_Ability_FrostBarrier</li>
+				</abilities>
+			</li>
+			<li Class="GFL_Weap.CompProperties_PlayerOnly" />
+		</comps>
+	</ThingDef>
+
+	<!-- Suomi SMG Bullet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_SuomiSMG</defName>
+		<label>Suomi bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

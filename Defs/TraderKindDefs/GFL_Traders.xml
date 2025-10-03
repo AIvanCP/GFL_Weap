@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Add GFL weapons to Combat Supplier traders -->
+	<TraderKindDef>
+		<defName>GFL_CombatSupplier</defName>
+		<label>combat supplier</label>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Suomi</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+
+	<!-- Patch: Add GFL weapons to existing Orbital Combat Supplier -->
+	<TraderKindDef ParentName="Base_Orbital_Trader">
+		<defName>Orbital_CombatSupplier</defName>
+		<stockGenerators>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Suomi</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+
+</Defs>

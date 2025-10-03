@@ -1,0 +1,39 @@
+# Build outputs
+Assemblies/*.dll
+Assemblies/*.pdb
+Assemblies/*.mdb
+
+# Visual Studio / MSBuild
+Source/**/bin/
+Source/**/obj/
+Source/**/.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Old structure (from rename)
+Source/GFL_Suomi/
+
+# Temp files
+*.tmp
+*.temp
+*.log
+
+# RimWorld specific
+*.rws
+About/PublishedFileId.txt

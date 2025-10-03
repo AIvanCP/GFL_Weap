@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Freeze Shot Projectile -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Projectile_FreezeBolt</defName>
+		<label>freeze bolt</label>
+		<thingClass>GFL_Weap.Projectile_FreezeBolt</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(0.4, 0.8, 1.0)</color>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>GFL_FrostDamage</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<speed>55</speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

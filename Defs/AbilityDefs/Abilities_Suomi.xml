@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Freeze Shot Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_FreezeShot</defName>
+		<label>Freeze Shot</label>
+		<description>Launch a freezing bolt at an enemy, dealing weapon damage plus 10-20 frost damage. Each allied pawn within 6 tiles of the target adds 0.5 seconds of stun duration.</description>
+		<iconPath>UI/Icons/Abilities/FreezeShot</iconPath>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_FreezeShot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<range>6</range>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Frost Barrier Ultimate Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_FrostBarrier</defName>
+		<label>Frost Barrier</label>
+		<description>Create a frost zone at target location. Deals 10-20 damage to all enemies within 3 tiles, applies Avalanche debuff (20% slow, +20% damage taken for 5s), creates frost terrain for 1 hour, and grants all allies a Frost Barrier shield (80 HP, heals 1 HP/sec, cleanses 1 debuff, lasts 30s).</description>
+		<iconPath>UI/Icons/Abilities/FrostBarrier</iconPath>
+		<cooldownTicksRange>3600</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_FrostBarrier</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>1.0</warmupTime>
+			<range>6</range>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

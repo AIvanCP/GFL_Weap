@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  
+  <!-- Weapon -->
+  <GFL_Weapon_Suomi.label>Suomi SMG</GFL_Weapon_Suomi.label>
+  <GFL_Weapon_Suomi.description>A Finnish submachine gun with advanced frost-based combat systems. When equipped, grants the wielder access to Freeze Shot and Frost Barrier abilities.</GFL_Weapon_Suomi.description>
+  
+  <!-- Abilities -->
+  <GFL_Ability_FreezeShot.label>Freeze Shot</GFL_Ability_FreezeShot.label>
+  <GFL_Ability_FreezeShot.description>Launch a freezing bolt at an enemy, dealing weapon damage plus 10-20 frost damage. Each allied pawn within 6 tiles of the target adds 0.5 seconds of stun duration.</GFL_Ability_FreezeShot.description>
+  
+  <GFL_Ability_FrostBarrier.label>Frost Barrier</GFL_Ability_FrostBarrier.label>
+  <GFL_Ability_FrostBarrier.description>Create a frost zone at target location. Deals 10-20 damage to all enemies within 3 tiles, applies Avalanche debuff (20% slow, +20% damage taken for 5s), creates frost terrain for 1 hour, and grants all allies a Frost Barrier shield (80 HP, heals 1 HP/sec, cleanses 1 debuff, lasts 30s).</GFL_Ability_FrostBarrier.description>
+  
+  <!-- Hediffs -->
+  <GFL_Hediff_FrostBarrier.label>frost barrier</GFL_Hediff_FrostBarrier.label>
+  <GFL_Hediff_FrostBarrier.description>A protective frost shield that absorbs up to 80 damage and heals the bearer for 1 HP per second. Automatically expires after 30 seconds or when the shield is depleted.</GFL_Hediff_FrostBarrier.description>
+  
+  <GFL_Hediff_Avalanche.label>avalanche</GFL_Hediff_Avalanche.label>
+  <GFL_Hediff_Avalanche.description>Movement slowed by 20% and damage taken increased by 20%. Applied by Frost Barrier ability.</GFL_Hediff_Avalanche.description>
+  
+  <GFL_Hediff_FrostTerrain.label>frost terrain</GFL_Hediff_FrostTerrain.label>
+  <GFL_Hediff_FrostTerrain.description>Standing on frost terrain. Movement slowed by 10% and damage taken increased by 10%.</GFL_Hediff_FrostTerrain.description>
+  
+  <!-- Damage -->
+  <GFL_FrostDamage.label>frost</GFL_FrostDamage.label>
+  <GFL_FrostDamage.deathMessage>{0} has been frozen to death.</GFL_FrostDamage.deathMessage>
+  
+  <!-- Terrain -->
+  <GFL_FrostTerrain.label>frost zone</GFL_FrostTerrain.label>
+  <GFL_FrostTerrain.description>A frozen area created by Frost Barrier. Slows enemies and makes them more vulnerable.</GFL_FrostTerrain.description>
+  
+</LanguageData>

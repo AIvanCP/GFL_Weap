@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>GFL Weapons</name>
+	<author>AIvanCP</author>
+	<packageId>gfl.weap</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<description>Adds weapons from Girls' Frontline with unique abilities. Currently includes:
+
+Suomi SMG - Frost-based abilities:
+- Freeze Shot: Launch a freezing bolt that deals damage and stuns enemies, with stun duration scaling based on nearby allies.
+- Frost Barrier (Ultimate): Create an area of frost terrain, deal AoE damage, apply slow debuffs, and grant allies protective shields with healing.
+
+Weapons are player-only and can be obtained through trading, quest rewards, or crafting.
+
+Compatible with vanilla and Combat Extended.
+
+Credits:
+Original Characters and Concepts © Girls' Frontline / Sunborn Games / MICA Team
+This is a fan-made mod and is not officially affiliated with Girls' Frontline.</description>
+	<modDependencies>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>CETeam.CombatExtended</li>
+	</loadAfter>
+</ModMetaData>

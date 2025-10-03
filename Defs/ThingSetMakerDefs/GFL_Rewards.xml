@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- GFL Weapon Quest Rewards -->
+	<ThingSetMakerDef>
+		<defName>GFL_QuestReward_Weapons</defName>
+		<root Class="ThingSetMaker_MarketValue">
+			<fixedParams>
+				<filter>
+					<thingDefs>
+						<li>GFL_Weapon_Suomi</li>
+					</thingDefs>
+				</filter>
+			</fixedParams>
+		</root>
+	</ThingSetMakerDef>
+
+	<!-- Add to standard weapon rewards pool -->
+	<ThingSetMakerDef>
+		<defName>Reward_ItemsStandard</defName>
+		<root Class="ThingSetMaker_Sum">
+			<options>
+				<li Class="ThingSetMaker_Conditional">
+					<chance>0.05</chance>
+					<root Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>GFL_Weapon_Suomi</li>
+								</thingDefs>
+							</filter>
+						</fixedParams>
+					</root>
+				</li>
+			</options>
+		</root>
+	</ThingSetMakerDef>
+
+</Defs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Frost Barrier Shield Hediff -->
+	<HediffDef>
+		<defName>GFL_Hediff_FrostBarrier</defName>
+		<label>frost barrier</label>
+		<description>A protective frost shield that absorbs up to 80 damage and heals the bearer for 1 HP per second. Automatically expires after 30 seconds or when the shield is depleted.</description>
+		<hediffClass>GFL_Weap.Hediff_FrostBarrier</hediffClass>
+		<defaultLabelColor>(0.4, 0.8, 1.0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>1</initialSeverity>
+		<everCurableByItem>false</everCurableByItem>
+	</HediffDef>
+
+	<!-- Avalanche Debuff -->
+	<HediffDef>
+		<defName>GFL_Hediff_Avalanche</defName>
+		<label>avalanche</label>
+		<description>Movement slowed by 20% and damage taken increased by 20%. Applied by Frost Barrier ability.</description>
+		<hediffClass>GFL_Weap.Hediff_Avalanche</hediffClass>
+		<defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>300</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>1.20</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Frost Terrain Debuff (when standing on frost tiles) -->
+	<HediffDef>
+		<defName>GFL_Hediff_FrostTerrain</defName>
+		<label>frost terrain</label>
+		<description>Standing on frost terrain. Movement slowed by 10% and damage taken increased by 10%.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.7, 0.7, 1.0)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>1.10</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

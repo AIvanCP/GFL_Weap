@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Frost Terrain -->
+	<TerrainDef ParentName="NaturalTerrainBase">
+		<defName>GFL_FrostTerrain</defName>
+		<label>frost zone</label>
+		<description>A frozen area created by Frost Barrier. Slows enemies and makes them more vulnerable.</description>
+		<texturePath>Terrain/Surfaces/Ice</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>100</renderPrecedence>
+		<pathCost>20</pathCost>
+		<statBases>
+			<Beauty>1</Beauty>
+			<Cleanliness>0</Cleanliness>
+		</statBases>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+			<li>GrowSoil</li>
+			<li>Diggable</li>
+		</affordances>
+		<generatedFilth>Filth_RubbleRock</generatedFilth>
+		<takeFootprints>true</takeFootprints>
+		<fertility>0</fertility>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	</TerrainDef>
+
+</Defs>
