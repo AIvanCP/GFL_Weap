@@ -35,6 +35,11 @@
       <HintPath>$(RimWorldManaged)\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <!-- Harmony for damage interception -->
+    <Reference Include="0Harmony">
+      <HintPath>$(RimWorldDir)\Mods\1204108550\1.1\Source\RunAndGun\packages\Lib.Harmony.2.0.0.5\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>

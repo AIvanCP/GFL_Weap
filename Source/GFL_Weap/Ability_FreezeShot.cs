@@ -34,7 +34,7 @@ namespace GFL_Weap
                         // Store caster for ally counting
                         projectile.abilityCaster = CasterPawn;
                         
-                        Messages.Message($"{CasterPawn.LabelShort} uses Freeze Shot!", MessageTypeDefOf.NeutralEvent, false);
+                        // No spam message - visual projectile only
                     }
                     else
                     {
@@ -93,8 +93,7 @@ namespace GFL_Weap
                         int stunTicks = Mathf.RoundToInt(allyCount * 0.5f * 60); // 0.5 sec = 30 ticks
                         targetPawn.stances?.stunner?.StunFor(stunTicks, launcher);
                         
-                        Messages.Message($"Freeze Shot hits {targetPawn.LabelShort}! ({allyCount} allies nearby = {stunTicks / 60f:F1}s stun)", 
-                            targetPawn, MessageTypeDefOf.NeutralEvent, false);
+                        // Visual feedback only - no spam message
                     }
 
                     // Spawn frost flecks

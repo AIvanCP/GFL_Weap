@@ -78,6 +78,13 @@ namespace GFL_Weap
                 tickCounter++;
                 ticksRemaining--;
 
+                // Show persistent blue glow every 30 ticks (half second) while shield active
+                if (tickCounter % 30 == 0 && pawn?.Map != null && pawn.Spawned && shieldHitPoints > 0)
+                {
+                    // Blue shield glow effect
+                    FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 0.8f);
+                }
+
                 // Heal 1 HP per second (60 ticks)
                 if (tickCounter >= 60)
                 {
@@ -101,77 +108,13 @@ namespace GFL_Weap
                 // Check if expired
                 if (ticksRemaining <= 0 || shieldHitPoints <= 0)
                 {
-                    // Shield expired or broken
-                    if (pawn?.Map != null)
-                    {
-                        FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1f);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Shield expired", Color.cyan, 2f);
-                    }
-                    
+                    // Shield expired or broken - remove silently
                     pawn?.health?.RemoveHediff(this);
                 }
             }
             catch (Exception ex)
             {
                 Log.Error($"[GFL Weapons] Error in Hediff_FrostBarrier.Tick: {ex}");
-            }
-        }
-
-        // Note: RimWorld version used may not expose PostPreApplyDamage as an overridable method on HediffWithComps.
-        // Keep this method non-virtual so the project compiles; the damage interception will still work if the game calls
-        // a matching method via reflection or if you move this logic into a HediffComp in the future.
-        public void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
-        {
-            absorbed = false;
-
-            try
-            {
-                // Some RimWorld versions don't expose externalViolence; allow shield to absorb most incoming damage.
-                if (shieldHitPoints > 0)
-                {
-                    float damageAmount = dinfo.Amount;
-                    
-                    if (damageAmount <= shieldHitPoints)
-                    {
-                        // Shield absorbs all damage
-                        shieldHitPoints -= damageAmount;
-                        absorbed = true;
-                        dinfo.SetAmount(0);
-                        
-                        // Visual feedback
-                        if (pawn?.Map != null)
-                        {
-                            FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 0.5f);
-                            
-                            if (pawn?.Map != null)
-                            {
-                                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, $"Absorbed {Mathf.RoundToInt(damageAmount)}", Color.white, 1.8f);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Shield absorbs partial damage
-                        float remainingDamage = damageAmount - shieldHitPoints;
-                        shieldHitPoints = 0;
-                        dinfo.SetAmount(remainingDamage);
-                        
-                        // Shield broken
-                        if (pawn?.Map != null)
-                        {
-                            FleckMaker.Static(pawn.DrawPos, pawn.Map, FleckDefOf.ExplosionFlash, 1f);
-                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Shield broken!", Color.red, 2f);
-                            
-                            
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"[GFL Weapons] Error in Hediff_FrostBarrier.PostPreApplyDamage: {ex}");
-                // base.PostPreApplyDamage may not exist on this RimWorld version; swallow to avoid crashing.
-                absorbed = false;
             }
         }
 

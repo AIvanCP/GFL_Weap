@@ -141,9 +141,7 @@ namespace GFL_Weap
                         }
                     }
 
-                    Messages.Message($"{CasterPawn.LabelShort} activates Frost Barrier! {enemiesHit.Count} enemies hit, {alliedPawns.Count} allies shielded.", 
-                        MessageTypeDefOf.PositiveEvent, false);
-
+                    // No spam message - visual effects only
                     return true;
                 }
             }
