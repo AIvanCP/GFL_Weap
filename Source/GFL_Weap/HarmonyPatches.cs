@@ -29,31 +29,38 @@ namespace GFL_Weap
 
     /// <summary>
     /// Intercept damage on pawns to allow Frost Barrier shield absorption
+    /// Uses PreApplyDamage which is called before damage is applied
     /// </summary>
-    [HarmonyPatch(typeof(Pawn), "TakeDamage")]
-    public static class Pawn_TakeDamage_Patch
+    [HarmonyPatch(typeof(Thing), nameof(Thing.TakeDamage))]
+    public static class Thing_TakeDamage_Patch
     {
-        public static bool Prefix(Pawn __instance, ref DamageInfo dinfo)
+        public static void Prefix(Thing __instance, ref DamageInfo dinfo)
         {
             try
             {
-                // Skip if no damage or pawn is dead
-                if (__instance == null || __instance.Dead || dinfo.Amount <= 0)
+                // Only process pawns
+                if (!(__instance is Pawn pawn))
                 {
-                    return true;
+                    return;
+                }
+
+                // Skip if no damage or pawn is dead
+                if (pawn.Dead || dinfo.Amount <= 0)
+                {
+                    return;
                 }
 
                 // Check for Frost Barrier shield
                 var frostBarrierDef = DefDatabase<HediffDef>.GetNamedSilentFail("GFL_Hediff_FrostBarrier");
                 if (frostBarrierDef == null)
                 {
-                    return true; // No def found, continue normal damage
+                    return; // No def found, continue normal damage
                 }
 
-                var frostBarrier = __instance.health?.hediffSet?.GetFirstHediffOfDef(frostBarrierDef) as Hediff_FrostBarrier;
+                var frostBarrier = pawn.health?.hediffSet?.GetFirstHediffOfDef(frostBarrierDef) as Hediff_FrostBarrier;
                 if (frostBarrier == null || frostBarrier.shieldHitPoints <= 0)
                 {
-                    return true; // No shield or shield depleted, continue normal damage
+                    return; // No shield or shield depleted, continue normal damage
                 }
 
                 // Shield is active - absorb damage
@@ -66,15 +73,13 @@ namespace GFL_Weap
                     dinfo.SetAmount(0);
 
                     // Visual feedback
-                    if (__instance.Map != null && __instance.Spawned)
+                    if (pawn.Map != null && pawn.Spawned)
                     {
-                        FleckMaker.ThrowLightningGlow(__instance.DrawPos, __instance.Map, 0.6f);
-                        MoteMaker.ThrowText(__instance.DrawPos, __instance.Map, 
+                        FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 0.6f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, 
                             $"-{Mathf.RoundToInt(damageAmount)}", 
                             new Color(0.5f, 0.8f, 1f), 1.5f);
                     }
-
-                    return false; // Block original damage application
                 }
                 else
                 {
@@ -84,21 +89,18 @@ namespace GFL_Weap
                     dinfo.SetAmount(remainingDamage);
 
                     // Shield broken visual
-                    if (__instance.Map != null && __instance.Spawned)
+                    if (pawn.Map != null && pawn.Spawned)
                     {
-                        FleckMaker.Static(__instance.DrawPos, __instance.Map, FleckDefOf.ExplosionFlash, 1f);
-                        MoteMaker.ThrowText(__instance.DrawPos, __instance.Map, 
+                        FleckMaker.Static(pawn.DrawPos, pawn.Map, FleckDefOf.ExplosionFlash, 1f);
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, 
                             "Barrier Broken!", 
                             Color.red, 2f);
                     }
-
-                    return true; // Apply remaining damage
                 }
             }
             catch (Exception ex)
             {
-                Log.Error($"[GFL Weapons] Error in Pawn_TakeDamage_Patch: {ex}");
-                return true; // Continue with original damage on error
+                Log.Error($"[GFL Weapons] Error in Thing_TakeDamage_Patch: {ex}");
             }
         }
     }

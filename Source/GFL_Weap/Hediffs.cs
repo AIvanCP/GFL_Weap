@@ -17,6 +17,9 @@ namespace GFL_Weap
         private const float maxShieldHP = 80f;
         private const float healPerSecond = 1f;
         private int tickCounter = 0;
+        
+        // Shield bubble overlay reference
+        private Effecter shieldBubbleEffecter;
 
         public override string LabelInBrackets
         {
@@ -36,31 +39,21 @@ namespace GFL_Weap
                 shieldHitPoints = maxShieldHP;
                 ticksRemaining = 1800;
                 
-                // Visual: spawn shield bubble effect
-                if (pawn?.Map != null)
+                // Create persistent shield bubble effecter
+                if (pawn?.Map != null && pawn.Spawned)
                 {
-                    // Try to use psycast fleck if available, otherwise use a generic effect
-                    FleckDef psyFleck = DefDatabase<FleckDef>.GetNamedSilentFail("PsycastAreaEffect");
-                    if (psyFleck != null)
+                    EffecterDef shieldEffect = DefDatabase<EffecterDef>.GetNamedSilentFail("Skip_EntryNoDelay");
+                    if (shieldEffect != null)
                     {
-                        FleckMaker.Static(pawn.DrawPos, pawn.Map, psyFleck, 2f);
-                    }
-                    else
-                    {
-                        FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1f);
-                    }
-
-                    ThingDef moteDef = DefDatabase<ThingDef>.GetNamedSilentFail("Mote_PsycastAreaEffect");
-                    if (moteDef != null)
-                    {
-                        MoteMaker.MakeAttachedOverlay(pawn, moteDef, Vector3.zero, 1f);
+                        shieldBubbleEffecter = shieldEffect.Spawn();
+                        shieldBubbleEffecter.offset = new Vector3(0f, 0f, 0f);
                     }
                     
+                    // Initial visual flash
+                    FleckMaker.ThrowLightningGlow(pawn.DrawPos, pawn.Map, 1f);
+                    
                     // Floating text instead of message log
-                    if (pawn?.Map != null)
-                    {
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Frost Barrier +80", Color.cyan, 2f);
-                    }
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Frost Barrier +80", Color.cyan, 2f);
                 }
             }
             catch (Exception ex)
@@ -78,6 +71,12 @@ namespace GFL_Weap
                 tickCounter++;
                 ticksRemaining--;
 
+                // Maintain shield bubble visual
+                if (shieldHitPoints > 0 && pawn?.Spawned == true && shieldBubbleEffecter != null)
+                {
+                    shieldBubbleEffecter.EffectTick(pawn, pawn);
+                }
+                
                 // Show persistent blue glow every 30 ticks (half second) while shield active
                 if (tickCounter % 30 == 0 && pawn?.Map != null && pawn.Spawned && shieldHitPoints > 0)
                 {
@@ -108,6 +107,13 @@ namespace GFL_Weap
                 // Check if expired
                 if (ticksRemaining <= 0 || shieldHitPoints <= 0)
                 {
+                    // Clean up effecter
+                    if (shieldBubbleEffecter != null)
+                    {
+                        shieldBubbleEffecter.Cleanup();
+                        shieldBubbleEffecter = null;
+                    }
+                    
                     // Shield expired or broken - remove silently
                     pawn?.health?.RemoveHediff(this);
                 }
@@ -115,6 +121,25 @@ namespace GFL_Weap
             catch (Exception ex)
             {
                 Log.Error($"[GFL Weapons] Error in Hediff_FrostBarrier.Tick: {ex}");
+            }
+        }
+        
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            
+            try
+            {
+                // Clean up effecter when hediff removed
+                if (shieldBubbleEffecter != null)
+                {
+                    shieldBubbleEffecter.Cleanup();
+                    shieldBubbleEffecter = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"[GFL Weapons] Error in Hediff_FrostBarrier.PostRemoved: {ex}");
             }
         }
 

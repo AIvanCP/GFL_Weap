@@ -39,6 +39,9 @@
 		<aiCanUse>true</aiCanUse>
 		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<statBases>
+    		<Ability_EffectRadius>3</Ability_EffectRadius>
+  		</statBases>
 		<verbProperties>
 			<verbClass>GFL_Weap.Verb_FrostBarrier</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
@@ -51,11 +54,6 @@
 				<canTargetPawns>false</canTargetPawns>
 				<canTargetBuildings>false</canTargetBuildings>
 			</targetParams>
-			<!-- AoE visual preview circle -->
-			<targetAoEProps>
-				<radius>3</radius>
-				<showTargetingCells>true</showTargetingCells>
-			</targetAoEProps>
 		</verbProperties>
 	</AbilityDef>
 
