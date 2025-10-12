@@ -1,6 +1,26 @@
-# Changelog - GFL Suomi SMG Mod
+# Changelog - GFL Weapons Mod
 
-## Version 1.0.0 (Initial Release)
+## Version 1.4.1 (October 9, 2025)
+
+### Fixed
+- **Critical**: Fixed duplicate RecipeDef errors for Hestia and Trailblazer
+  - Replaced standalone RecipeDef with recipeMaker inside weapon ThingDef
+  - Prevents "Adding duplicate RecipeDef name" errors on game load
+- **Critical**: Fixed missing AbilityCategoryDef "WeaponAbility"
+  - Created new AbilityCategories.xml with WeaponAbility category def
+  - Fixes "No AbilityCategoryDef named WeaponAbility found" errors for Trailblazer and Hestia abilities
+- Fixed Hestia ability icon paths
+  - Removed "Hestia_" prefix to match actual filenames (FissionedFirelight.png, NoSurvivors.png)
+  - Fixes "Could not load Texture2D" errors
+- Verified all 5 weapons have CompPlayerOnly (player-only restriction working correctly)
+
+### Technical
+- Build successful: GFL_Weap.dll (69,120 bytes)
+- Zero compilation errors or warnings
+- All XML cross-references validated
+- All ability icons loading correctly
+
+## Version 1.4.0 (October 9, 2025)
 
 ### Features
 - Added Suomi SMG weapon (Industrial-tier submachine gun)

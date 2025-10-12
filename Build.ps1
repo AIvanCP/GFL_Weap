@@ -1,14 +1,14 @@
-# Build script for GFL Suomi mod
+# Build script for GFL Weap mod
 # Run this from the mod root directory
 
-Write-Host "Building GFL Suomi mod..." -ForegroundColor Green
+Write-Host "Building GFL Weap mod..." -ForegroundColor Green
 
 # Check if dotnet is available
 $dotnetAvailable = Get-Command dotnet -ErrorAction SilentlyContinue
 
 if ($dotnetAvailable) {
     Write-Host "Using dotnet to build..." -ForegroundColor Cyan
-    Set-Location "Source\GFL_Suomi"
+    Set-Location "Source\GFL_Weap"
     dotnet build -c Release
     Set-Location "..\..\"
 } else {
@@ -17,7 +17,7 @@ if ($dotnetAvailable) {
     
     if ($msbuildPath) {
         Write-Host "Using MSBuild to build..." -ForegroundColor Cyan
-        & $msbuildPath "Source\GFL_Suomi\GFL_Suomi.csproj" /p:Configuration=Release
+        & $msbuildPath "Source\GFL_Weap\GFL_Weap.csproj" /p:Configuration=Release
     } else {
         Write-Host "ERROR: Could not find dotnet or MSBuild!" -ForegroundColor Red
         Write-Host "Please install .NET Framework 4.8 SDK or Visual Studio 2019+" -ForegroundColor Yellow
@@ -25,11 +25,11 @@ if ($dotnetAvailable) {
     }
 }
 
-if (Test-Path "Assemblies\GFL_Suomi.dll") {
-    Write-Host "Build successful! DLL created at Assemblies\GFL_Suomi.dll" -ForegroundColor Green
+if (Test-Path "Assemblies\GFL_Weap.dll") {
+    Write-Host "Build successful! DLL created at Assemblies\GFL_Weap.dll" -ForegroundColor Green
     
     # Show file info
-    $dllInfo = Get-Item "Assemblies\GFL_Suomi.dll"
+    $dllInfo = Get-Item "Assemblies\GFL_Weap.dll"
     Write-Host "File size: $($dllInfo.Length) bytes" -ForegroundColor Cyan
     Write-Host "Last modified: $($dllInfo.LastWriteTime)" -ForegroundColor Cyan
 } else {

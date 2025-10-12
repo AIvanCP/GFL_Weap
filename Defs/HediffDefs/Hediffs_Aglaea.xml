@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Confectance Index - Gained when turret dies -->
+	<HediffDef>
+		<defName>GFL_Hediff_ConfectanceIndex</defName>
+		<label>confectance index</label>
+		<description>A boost from turret destruction. Increases combat effectiveness slightly.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(100, 255, 150)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>10.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>1800</disappearsAfterTicks> <!-- 30 seconds -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.05</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<statOffsets>
+					<ShootingAccuracyPawn>0.10</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.10</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<statOffsets>
+					<ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Negative Charge - Applied to turrets and enemies -->
+	<HediffDef>
+		<defName>GFL_Hediff_NegativeCharge</defName>
+		<label>negative charge</label>
+		<description>Electrically charged in a negative state. Takes splash damage when hit by electric attacks, and vulnerable to Positive Charge interactions.</description>
+		<hediffClass>GFL_Weap.Hediff_NegativeCharge</hediffClass>
+		<defaultLabelColor>(150, 150, 255)</defaultLabelColor>
+		<isBad>true</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>600</disappearsAfterTicks> <!-- 10 seconds -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>negatively charged</label>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Positive Charge - Applied to allies by Fortification Protocol -->
+	<HediffDef>
+		<defName>GFL_Hediff_PositiveCharge</defName>
+		<label>positive charge</label>
+		<description>Electrically charged in a positive state. Heals over time and deals bonus damage to Negative Charge targets.</description>
+		<hediffClass>GFL_Weap.Hediff_PositiveCharge</hediffClass>
+		<defaultLabelColor>(255, 220, 100)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>180</disappearsAfterTicks> <!-- 3 seconds / 3 turns -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>positively charged</label>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Shelter - Stackable damage reduction -->
+	<HediffDef>
+		<defName>GFL_Hediff_Shelter</defName>
+		<label>shelter</label>
+		<description>Protected by a defensive barrier. Reduces incoming damage.</description>
+		<hediffClass>GFL_Weap.Hediff_Shelter</hediffClass>
+		<defaultLabelColor>(200, 200, 255)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>2.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<stages>
+			<li>
+				<label>sheltered</label>
+				<statOffsets>
+					<IncomingDamageFactor>-0.10</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<label>double sheltered</label>
+				<statOffsets>
+					<IncomingDamageFactor>-0.20</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Fortified Stance - Applied to caster by ultimate -->
+	<HediffDef>
+		<defName>GFL_Hediff_FortifiedStance</defName>
+		<label>fortified stance</label>
+		<description>A defensive stance that reduces incoming damage. Cannot be cleansed until duration ends.</description>
+		<hediffClass>GFL_Weap.Hediff_FortifiedStance</hediffClass>
+		<defaultLabelColor>(255, 200, 100)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<makesSickThought>false</makesSickThought>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>120</disappearsAfterTicks> <!-- 2 seconds / 2 rounds -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>fortified</label>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

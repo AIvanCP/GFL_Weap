@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Mosin Nagant Sniper Rifle -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>GFL_Weapon_Mosin</defName>
+		<label>Mosin Nagant</label>
+		<description>A powerful bolt-action sniper rifle with advanced electrical discharge systems. When equipped, grants the wielder access to Target Victory and Declaration of Victory abilities that can shock and paralyze targets at long range.</description>
+		<techLevel>Industrial</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Mosint/Samosin_sr</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<Mass>4.5</Mass>
+			<AccuracyTouch>0.50</AccuracyTouch>
+			<AccuracyShort>0.70</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.90</AccuracyLong>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun</li>
+			<li>SniperRifle</li>
+			<li>LongShots</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+		</weaponClasses>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Gold>5</Gold>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_Mosin</defaultProjectile>
+				<warmupTime>1.2</warmupTime>
+				<range>42</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2.5</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2.5</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="GFL_Weap.CompProperties_WeaponAbilities">
+				<abilities>
+					<li>GFL_Ability_TargetVictory</li>
+					<li>GFL_Ability_DeclarationOfVictory</li>
+				</abilities>
+			</li>
+			<li Class="GFL_Weap.CompProperties_PlayerOnly" />
+		</comps>
+	</ThingDef>
+
+	<!-- Mosin Nagant Bullet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_Mosin</defName>
+		<label>Mosin bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>28</damageAmountBase>
+			<speed>85</speed>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+</Defs>

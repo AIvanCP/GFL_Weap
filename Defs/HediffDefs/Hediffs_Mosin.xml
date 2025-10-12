@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Conductivity Hediff - Makes target vulnerable to electrical attacks -->
+	<HediffDef>
+		<defName>GFL_Hediff_Conductivity</defName>
+		<label>conductivity</label>
+		<description>The target's body is highly conductive to electricity. Incoming damage may trigger paralysis effects.</description>
+		<hediffClass>GFL_Weap.Hediff_Conductivity</hediffClass>
+		<defaultLabelColor>(100, 200, 255)</defaultLabelColor>
+		<isBad>true</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>240~360</disappearsAfterTicks> <!-- 4-6 seconds -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>conductive</label>
+				<painFactor>1.1</painFactor>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Paralysis Hediff - Prevents movement and manipulation -->
+	<HediffDef>
+		<defName>GFL_Hediff_Paralysis</defName>
+		<label>paralysis</label>
+		<description>The target is paralyzed by an electrical surge and cannot move or act.</description>
+		<hediffClass>GFL_Weap.Hediff_Paralysis</hediffClass>
+		<defaultLabelColor>(255, 220, 100)</defaultLabelColor>
+		<isBad>true</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>1.0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>120</disappearsAfterTicks> <!-- 2 seconds / 1 turn -->
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>paralyzed</label>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<setMax>0.01</setMax>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<setMax>0.01</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

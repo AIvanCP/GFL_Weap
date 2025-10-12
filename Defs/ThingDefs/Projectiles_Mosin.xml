@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Target Victory Projectile (Electric Bolt) -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Projectile_TargetVictory</defName>
+		<label>electric bolt</label>
+		<thingClass>GFL_Weap.Projectile_TargetVictory</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Spark</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(100, 200, 255)</color>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>75</speed>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>Explosion_Bomb</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+		</projectile>
+	</ThingDef>
+
+	<!-- Declaration of Victory Projectile (Powerful Electric Surge) -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Projectile_DeclarationOfVictory</defName>
+		<label>lightning surge</label>
+		<thingClass>GFL_Weap.Projectile_DeclarationOfVictory</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Spark</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(150, 220, 255)</color>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>80</speed>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>Explosion_Bomb</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+		</projectile>
+	</ThingDef>
+
+</Defs>

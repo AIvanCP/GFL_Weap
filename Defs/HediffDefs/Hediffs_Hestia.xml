@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Rend - Stackable defense debuff (max 8 stacks) -->
+	<HediffDef>
+		<defName>GFL_Hediff_Rend</defName>
+		<label>rend</label>
+		<description>Deep lacerations that expose vulnerable tissue. Each stack increases physical damage taken by 30%, making the victim increasingly susceptible to attacks.\n\nMax Stacks: 8\nDamage Vulnerability: +30% per stack (multiplicative)\nDuration: 15 seconds (refreshes on new stacks)</description>
+		<hediffClass>GFL_Weap.Hediff_Rend</hediffClass>
+		<defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesSickThought>false</makesSickThought>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1.0</initialSeverity>
+		<maxSeverity>8.0</maxSeverity>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<label>minor</label>
+				<minSeverity>0</minSeverity>
+			</li>
+			<li>
+				<label>moderate</label>
+				<minSeverity>3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>severe</label>
+				<minSeverity>6</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Gash - DOT hediff with stack consumption -->
+	<HediffDef>
+		<defName>GFL_Hediff_Gash</defName>
+		<label>gash</label>
+		<description>Bleeding wounds that continuously drain vitality. Deals periodic damage based on the applier's attack power and consumes 2 stacks with each damage tick.\n\nDamage: 8% of applier attack per stack\nTick Interval: 60 ticks (1 second)\nStack Consumption: 2 per tick\nDuration: Until stacks depleted</description>
+		<hediffClass>GFL_Weap.Hediff_Gash</hediffClass>
+		<defaultLabelColor>(0.9, 0.1, 0.1)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesSickThought>true</makesSickThought>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1.0</initialSeverity>
+		<maxSeverity>50.0</maxSeverity>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<label>bleeding</label>
+				<minSeverity>0</minSeverity>
+				<painFactor>1.10</painFactor>
+			</li>
+			<li>
+				<label>hemorrhaging</label>
+				<minSeverity>5</minSeverity>
+				<painFactor>1.25</painFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Confectance Index - Stack storage for Hestia abilities -->
+	<HediffDef>
+		<defName>GFL_Hediff_ConfectanceIndex_Hestia</defName>
+		<label>confectance index</label>
+		<description>Combat momentum accumulated through precise strikes with Hestia. Each point represents tactical advantage that can be leveraged for devastating ultimate attacks.\n\nGeneration: +2 per Fissioned Firelight hit\nConsumption: Read by No Survivors ability\nDuration: 60 seconds (refreshes on new stacks)</description>
+		<hediffClass>GFL_Weap.Hediff_ConfectanceIndex</hediffClass>
+		<defaultLabelColor>(0.4, 0.8, 1.0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<makesSickThought>false</makesSickThought>
+		<initialSeverity>1.0</initialSeverity>
+		<maxSeverity>50.0</maxSeverity>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Weapon -->
+	<GFL_Weapon_Hestia.label>Hestia</GFL_Weapon_Hestia.label>
+	<GFL_Weapon_Hestia.description>A reliable CZ75 pistol with integrated tactical systems. This sidearm excels at applying devastating debuffs through precise shots, stacking vulnerabilities on targets before delivering a crushing final blow.\n\nEquipped with two abilities:\n- Fissioned Firelight: Apply defense-shredding Rend stacks while building momentum\n- No Survivors: Consume stacked Rend to spread lethal Gash effects across all marked targets</GFL_Weapon_Hestia.description>
+
+	<!-- Abilities -->
+	<GFL_Ability_FissionedFirelight.label>Fissioned Firelight</GFL_Ability_FissionedFirelight.label>
+	<GFL_Ability_FissionedFirelight.description>Fire a precision shot that deals 120% weapon damage and applies 2 stacks of Rend (max 8) to the target. Each successful hit grants the caster +2 Confectance Index.\n\nRend Effect: +30% physical damage taken per stack\n\nCooldown: 18 seconds (1080 ticks)\nRange: 6 tiles\nDamage Type: Bullet\nSkill Scaling: +1% damage per Shooting level</GFL_Ability_FissionedFirelight.description>
+
+	<GFL_Ability_NoSurvivors.label>No Survivors</GFL_Ability_NoSurvivors.label>
+	<GFL_Ability_NoSurvivors.description>Unleash a devastating execution attack that deals 160% weapon damage to the primary target. All enemies within 6 tiles that have Rend stacks receive Gash stacks equal to the primary target's Rend count.\n\nIf the primary target has 6+ Rend stacks, consume 6 stacks and gain +120% bonus damage (total 280% weapon damage).\n\nGash Effect: 8% applier attack per stack every second, consumes 2 stacks per tick\n\nCooldown: 2 minutes (7200 ticks)\nRange: 6 tiles\nAoE: 6 tiles (Gash spread)\nDamage Type: Bullet\nSkill Scaling: +1% damage per Shooting level</GFL_Ability_NoSurvivors.description>
+
+	<!-- Hediffs -->
+	<GFL_Hediff_Rend.label>rend</GFL_Hediff_Rend.label>
+	<GFL_Hediff_Rend.description>Deep lacerations that expose vulnerable tissue. Each stack increases physical damage taken by 30%, making the victim increasingly susceptible to attacks.\n\nMax Stacks: 8\nDamage Vulnerability: +30% per stack (formula: 1 + 0.30 * stacks)\nDuration: 15 seconds (900 ticks, refreshes on new stacks)\nAffects: Bullet, Cut, Stab, Blunt, Arrow, Scratch, Bite, Crush damage</GFL_Hediff_Rend.description>
+
+	<GFL_Hediff_Gash.label>gash</GFL_Hediff_Gash.label>
+	<GFL_Hediff_Gash.description>Bleeding wounds that continuously drain vitality. Deals periodic damage based on the applier's attack power and consumes 2 stacks with each damage tick.\n\nDamage Formula: applierAttack * 0.08 * stacks\nTick Interval: 60 ticks (1 second)\nStack Consumption: 2 per tick\nDuration: Until stacks fully depleted\nDamage Type: Cut</GFL_Hediff_Gash.description>
+
+	<GFL_Hediff_ConfectanceIndex_Hestia.label>confectance index</GFL_Hediff_ConfectanceIndex_Hestia.label>
+	<GFL_Hediff_ConfectanceIndex_Hestia.description>Combat momentum accumulated through precise strikes with Hestia. Each point represents tactical advantage that can be leveraged for devastating ultimate attacks.\n\nGeneration: +2 per Fissioned Firelight hit\nConsumption: Read by No Survivors ability (informational, not consumed)\nDuration: 60 seconds (3600 ticks, refreshes on new stacks)</GFL_Hediff_ConfectanceIndex_Hestia.description>
+
+	<!-- Recipe -->
+	<Make_GFL_Weapon_Hestia.label>make Hestia pistol</Make_GFL_Weapon_Hestia.label>
+	<Make_GFL_Weapon_Hestia.description>Craft a Hestia (CZ75) tactical pistol with integrated debuff application systems.</Make_GFL_Weapon_Hestia.description>
+	<Make_GFL_Weapon_Hestia.jobString>Making Hestia pistol.</Make_GFL_Weapon_Hestia.jobString>
+
+</LanguageData>

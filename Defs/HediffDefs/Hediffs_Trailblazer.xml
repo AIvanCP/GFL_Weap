@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ScorchMark Hediff - Fire DOT with stacking -->
+	<HediffDef>
+		<defName>GFL_ScorchMark</defName>
+		<label>scorch mark</label>
+		<description>Deep burns that continue to deal fire damage over time. Each application stacks multiplicatively, increasing the damage per tick. This condition cannot be cleansed by normal means and must burn out naturally.</description>
+		<hediffClass>GFL_Weap.Hediff_ScorchMark</hediffClass>
+		<defaultLabelColor>(1, 0.5, 0.2)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesSickThought>true</makesSickThought>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>1.0</initialSeverity>
+		<maxSeverity>10.0</maxSeverity>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<label>minor burns</label>
+				<minSeverity>0</minSeverity>
+				<painFactor>1.05</painFactor>
+			</li>
+			<li>
+				<label>moderate burns</label>
+				<minSeverity>3</minSeverity>
+				<painFactor>1.15</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>severe burns</label>
+				<minSeverity>6</minSeverity>
+				<painFactor>1.30</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>critical burns</label>
+				<minSeverity>9</minSeverity>
+				<painFactor>1.50</painFactor>
+				<lifeThreatening>true</lifeThreatening>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.85</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

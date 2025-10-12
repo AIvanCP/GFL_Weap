@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Weapon Ability Category for GFL Weapons -->
+	<AbilityCategoryDef>
+		<defName>WeaponAbility</defName>
+		<label>weapon ability</label>
+		<displayOrder>100</displayOrder>
+	</AbilityCategoryDef>
+
+</Defs>

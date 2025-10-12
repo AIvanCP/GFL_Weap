@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Target Victory Ability - Single target, 1.3x damage, apply Conductivity -->
+	<AbilityDef>
+		<defName>GFL_Ability_TargetVictory</defName>
+		<label>Target Victory</label>
+		<description>Fire a powerful electrical shot that deals 130% weapon damage and applies Conductivity to the target, making them vulnerable to further electrical attacks.</description>
+		<iconPath>UI/Icons/Abilities/TargetVictory</iconPath>
+		<cooldownTicksRange>300</cooldownTicksRange> <!-- 5 seconds -->
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_TargetVictory</verbClass>
+			<range>35</range> <!-- Sniper range: increased from 9 -->
+			<warmupTime>0.8</warmupTime>
+			<soundCast>Shot_ChargeRifle</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Declaration of Victory Ability - Single target, 1.8x damage, Conductivity->Paralysis -->
+	<AbilityDef>
+		<defName>GFL_Ability_DeclarationOfVictory</defName>
+		<label>Declaration of Victory</label>
+		<description>Unleash a devastating lightning surge that deals 180% weapon damage. If the target has Conductivity, they will be paralyzed for a short duration.</description>
+		<iconPath>UI/Icons/Abilities/DeclarationOfVictory</iconPath>
+		<cooldownTicksRange>780</cooldownTicksRange> <!-- 13 seconds -->
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_DeclarationOfVictory</verbClass>
+			<range>35</range> <!-- Sniper range: increased from 9 -->
+			<warmupTime>1.2</warmupTime>
+			<soundCast>Shot_ChargeRifle</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

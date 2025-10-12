@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Weapon -->
+	<GFL_Weapon_Trailblazer.label>Trailblazer</GFL_Weapon_Trailblazer.label>
+	<GFL_Weapon_Trailblazer.description>A heavy combat shotgun with experimental incendiary systems. Capable of unleashing devastating close-range burns and area-of-effect fire storms. This weapon integrates tactical fire control systems that reward strategic play through accumulated combat experience.\n\nEquipped with two abilities:\n- Searing Sizzle: Focus fire on a single target with bonus damage at close range\n- Boil and Reduce: Unleash an area inferno powered by combat momentum (Confectance Index)</GFL_Weapon_Trailblazer.description>
+
+	<!-- Abilities -->
+	<GFL_Ability_SearingSizzle.label>Searing Sizzle</GFL_Ability_SearingSizzle.label>
+	<GFL_Ability_SearingSizzle.description>Focus a burst of superheated pellets at a single target, dealing 120% weapon damage as burn damage. Targets within 4 tiles take an additional 5% bonus damage and +2 flat damage.\n\nCooldown: Instant\nRange: 6 tiles\nDamage Type: Burn\n\nEach successful hit generates 1 Confectance Index point.</GFL_Ability_SearingSizzle.description>
+
+	<GFL_Ability_BoilAndReduce.label>Boil and Reduce</GFL_Ability_BoilAndReduce.label>
+	<GFL_Ability_BoilAndReduce.description>Unleash a devastating area-of-effect inferno that consumes accumulated combat momentum (Confectance Index). Deals 90% weapon damage to all enemies in a 3-tile radius, increased by 5% per Confectance point consumed. All affected enemies receive stacking Scorch Mark debuffs.\n\nIf an enemy dies from this attack, their corpse explodes in a secondary firestorm with the same damage and effects.\n\nCooldown: 30 seconds (1800 ticks)\nRange: 6 tiles\nAoE Radius: 3 tiles\nDamage Type: Burn\n\nConsumes all Confectance Index on use.</GFL_Ability_BoilAndReduce.description>
+
+	<!-- Hediff -->
+	<GFL_ScorchMark.label>scorch mark</GFL_ScorchMark.label>
+	<GFL_ScorchMark.description>Deep burns that continue to deal fire damage over time. Each application stacks multiplicatively, increasing the damage per tick. This condition cannot be cleansed by normal means and must burn out naturally.\n\nDuration: 30 seconds (1800 ticks)\nDamage Interval: 1 second (60 ticks)\nBase Damage: 7% of caster's weapon damage per tick\nStacking: Multiplicative (base * (1 + 0.07 * (stacks - 1)))\n\nCannot be treated or removed - must expire naturally.</GFL_ScorchMark.description>
+
+	<!-- Recipe -->
+	<Make_GFL_Weapon_Trailblazer.label>make Trailblazer shotgun</Make_GFL_Weapon_Trailblazer.label>
+	<Make_GFL_Weapon_Trailblazer.description>Craft a Trailblazer incendiary shotgun with integrated fire control systems.</Make_GFL_Weapon_Trailblazer.description>
+	<Make_GFL_Weapon_Trailblazer.jobString>Making Trailblazer shotgun.</Make_GFL_Weapon_Trailblazer.jobString>
+
+	<!-- Confectance Index System -->
+	<GFL_Confectance_System.label>Confectance Index</GFL_Confectance_System.label>
+	<GFL_Confectance_System.description>A combat momentum system that tracks successful engagements. Each hit with Searing Sizzle generates 1 Confectance point. Boil and Reduce consumes all accumulated Confectance for massive damage scaling.\n\nDamage Bonus: +5% per Confectance point\nMaximum effective stacks: Unlimited\nGeneration: +1 per Searing Sizzle hit\nConsumption: All points consumed by Boil and Reduce</GFL_Confectance_System.description>
+
+</LanguageData>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Aglaea Assault Rifle -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>GFL_Weapon_Aglaea</defName>
+		<label>Aglaea</label>
+		<description>An advanced assault rifle with integrated auto-turret deployment and fortification systems. When equipped, grants the wielder access to Gentle Offensive (summon defensive turrets) and Fortification Protocol (heal and buff allies).</description>
+		<techLevel>Industrial</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Aglaea/Aglaea</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>20000</WorkToMake>
+			<Mass>3.8</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.70</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>1.80</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun</li>
+			<li>AssaultRifle</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<Plasteel>10</Plasteel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_Aglaea</defaultProjectile>
+				<warmupTime>0.6</warmupTime>
+				<range>30</range>
+				<burstShotCount>3</burstShotCount>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<soundCast>Shot_AssaultRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>10</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="GFL_Weap.CompProperties_WeaponAbilities">
+				<abilities>
+					<li>GFL_Ability_GentleOffensive</li>
+					<li>GFL_Ability_FortificationProtocol</li>
+				</abilities>
+			</li>
+			<li Class="GFL_Weap.CompProperties_PlayerOnly" />
+		</comps>
+	</ThingDef>
+
+	<!-- Aglaea Bullet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_Aglaea</defName>
+		<label>Aglaea bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<speed>70</speed>
+			<armorPenetrationBase>0.25</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+</Defs>

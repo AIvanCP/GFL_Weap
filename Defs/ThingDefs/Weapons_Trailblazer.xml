@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Trailblazer Shotgun Weapon -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>GFL_Weapon_Trailblazer</defName>
+		<label>Trailblazer</label>
+		<description>A heavy combat shotgun with experimental incendiary systems. Capable of unleashing devastating close-range burns and area-of-effect fire storms. This weapon integrates tactical fire control systems that reward strategic play through accumulated combat experience.\n\nEquipped with two abilities: Searing Sizzle for focused single-target burns, and Boil and Reduce for area devastation powered by combat momentum.</description>
+		<techLevel>Industrial</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Trailblazer/Trailblazer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>Things/Weapons/Trailblazer/Trailblazer</uiIconPath>
+		<soundInteract>Interact_Shotgun</soundInteract>
+		<statBases>
+			<WorkToMake>28000</WorkToMake>
+			<Mass>3.8</Mass>
+			<AccuracyTouch>0.88</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.30</AccuracyLong>
+			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+			<MarketValue>850</MarketValue>
+		</statBases>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Plasteel>15</Plasteel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_Trailblazer</defaultProjectile>
+				<warmupTime>1.2</warmupTime>
+				<range>15</range>
+				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>Shot_Shotgun</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="GFL_Weap.CompProperties_WeaponAbilities">
+				<abilities>
+					<li>GFL_Ability_SearingSizzle</li>
+					<li>GFL_Ability_BoilAndReduce</li>
+				</abilities>
+			</li>
+			<li Class="GFL_Weap.CompProperties_PlayerOnly" />
+			<li Class="GFL_Weap.CompProperties_Confectance" />
+		</comps>
+	</ThingDef>
+
+	<!-- Trailblazer Bullet/Pellet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_Trailblazer</defName>
+		<label>shotgun pellet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>14</damageAmountBase>
+			<speed>55</speed>
+			<armorPenetrationBase>0.18</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+</Defs>

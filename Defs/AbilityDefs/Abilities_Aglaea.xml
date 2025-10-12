@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Gentle Offensive - Summon Auto-Turret -->
+	<AbilityDef>
+		<defName>GFL_Ability_GentleOffensive</defName>
+		<label>Gentle Offensive</label>
+		<description>Summon an auto-turret on an empty tile within 5 tiles. The turret inherits 50% of your HP and attack power, and 100% of your defense. Maximum 2 turrets active at once. When a turret dies, gain +1 Confectance Index.\n\nCooldown: Instant (no cooldown)</description>
+		<iconPath>UI/Icons/Abilities/GentleOffensive</iconPath>
+		<cooldownTicksRange>1</cooldownTicksRange> <!-- Instant reuse -->
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_GentleOffensive</verbClass>
+			<range>5</range> <!-- AR range: increased from 3 -->
+			<warmupTime>0.5</warmupTime>
+			<soundCast>Interact_Constructive</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Fortification Protocol - Ultimate heal and buff -->
+	<AbilityDef>
+		<defName>GFL_Ability_FortificationProtocol</defName>
+		<label>Fortification Protocol</label>
+		<description>Restore your stability and grant all allies within 9 tiles:\n- 2 stacks of Shelter (damage reduction)\n- Positive Charge for 3 seconds (20% max HP heal per second, +15% if near another Positive Charge ally, +35% damage vs Negative Charge)\n\nYou gain Fortified Stance for 2 seconds:\n- -20% incoming damage\n- Additional -15% damage from electrically debuffed attackers\n- Cannot be cleansed\n\nCooldown: 15 seconds</description>
+		<iconPath>UI/Icons/Abilities/Fortification Protocol</iconPath>
+		<cooldownTicksRange>900</cooldownTicksRange> <!-- 15 seconds -->
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_FortificationProtocol</verbClass>
+			<range>0</range>
+			<targetable>false</targetable>
+			<warmupTime>1.0</warmupTime>
+			<soundCast>Psycast_Skip_Pulse</soundCast>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>false</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

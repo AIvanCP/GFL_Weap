@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Weapon -->
+	<GFL_Weapon_Aglaea_Label>Aglaea</GFL_Weapon_Aglaea_Label>
+	<GFL_Weapon_Aglaea_Description>An advanced assault rifle developed from recovered schematics. This experimental weapon integrates tactical AI systems capable of deploying autonomous turrets and coordinating squad-level defensive protocols. Its advanced neural link allows the wielder to summon automated defenses and bolster nearby allies with protective energy fields.\n\nRumored to be part of a discontinued military program, its complex manufacturing requirements make it a rare sight on the battlefield.</GFL_Weapon_Aglaea_Description>
+
+	<!-- Abilities -->
+	<GFL_Ability_GentleOffensive_Label>Gentle Offensive</GFL_Ability_GentleOffensive_Label>
+	<GFL_Ability_GentleOffensive_Description>Summons one Auto-Turret on an empty tile within 3 tiles of the target location. The turret inherits 50% of the caster's maximum HP, 50% of their attack power, and 100% of their defense.\n\nMax 2 Auto-Turrets can be active at once; summoning a third will destroy the oldest turret. When a turret is destroyed, the caster gains +1 stack of Confectance Index.\n\nDeployed turrets begin with Negative Charge and can target enemies within their range independently.</GFL_Ability_GentleOffensive_Description>
+
+	<GFL_Ability_FortificationProtocol_Label>Fortification Protocol</GFL_Ability_FortificationProtocol_Label>
+	<GFL_Ability_FortificationProtocol_Description>The wielder channels defensive energy in a 9-tile radius, restoring their own stability and bolstering all allies within range.\n\nEffects on caster:\n- Restores 30% rest\n- Applies Fortified Stance (2 seconds)\n\nEffects on all allies within radius:\n- Applies 2 stacks of Shelter (damage reduction)\n- Applies Positive Charge (healing over time)\n\nCooldown: 15 seconds</GFL_Ability_FortificationProtocol_Description>
+
+	<!-- Hediffs -->
+	<GFL_Hediff_ConfectanceIndex_Label>Confectance Index</GFL_Hediff_ConfectanceIndex_Label>
+	<GFL_Hediff_ConfectanceIndex_LabelInBrackets>Confectance {0}</GFL_Hediff_ConfectanceIndex_LabelInBrackets>
+	<GFL_Hediff_ConfectanceIndex_Description>A measure of tactical awareness and battlefield coordination. Each stack increases shooting accuracy and melee dodge chance.\n\nGained when summoned Auto-Turrets are destroyed. Stacks up to 10 times.\n\nBonus per stack:\n- +5% Shooting Accuracy\n- +5% Melee Dodge Chance\n\nDuration: 30 seconds (refreshes on new stacks)</GFL_Hediff_ConfectanceIndex_Description>
+
+	<GFL_Hediff_NegativeCharge_Label>Negative Charge</GFL_Hediff_NegativeCharge_Label>
+	<GFL_Hediff_NegativeCharge_Description>An unstable electrical field surrounds this target, making them vulnerable to electric-based attacks.\n\nWhen reapplied, the applier gains +3% bonus damage on the application.\n\nIf the target takes electric damage (Burn/Flame), 30% of that damage is distributed as splash damage to all other targets with Negative Charge within 8 tiles.\n\nDuration: 10 seconds</GFL_Hediff_NegativeCharge_Description>
+
+	<GFL_Hediff_PositiveCharge_Label>Positive Charge</GFL_Hediff_PositiveCharge_Label>
+	<GFL_Hediff_PositiveCharge_Description>Restorative energy flows through this pawn, rapidly healing their injuries.\n\nHeals 20% of maximum HP per second. If another ally within 3 tiles also has Positive Charge, healing is increased by an additional 15% (synergy bonus).\n\nDuration: 3 seconds</GFL_Hediff_PositiveCharge_Description>
+
+	<GFL_Hediff_Shelter_Label>Shelter</GFL_Hediff_Shelter_Label>
+	<GFL_Hediff_Shelter_LabelInBrackets>Shelter x{0}</GFL_Hediff_Shelter_LabelInBrackets>
+	<GFL_Hediff_Shelter_Description>Protective energy shields reduce incoming damage. This effect stacks, providing increased protection with multiple applications.\n\nDamage reduction:\n- 1 stack: -10% incoming damage\n- 2 stacks: -20% incoming damage\n\nApplied by Fortification Protocol to all allies within range.</GFL_Hediff_Shelter_Description>
+
+	<GFL_Hediff_FortifiedStance_Label>Fortified Stance</GFL_Hediff_FortifiedStance_Label>
+	<GFL_Hediff_FortifiedStance_Description>The wielder enters a defensive posture, significantly reducing damage taken at the cost of mobility.\n\nEffects:\n- -50% incoming damage\n- -10% movement speed\n\nThis effect cannot be cleansed by enemy abilities.\n\nDuration: 2 seconds</GFL_Hediff_FortifiedStance_Description>
+
+	<!-- Turret -->
+	<GFL_AutoTurret_Aglaea_Label>Auto-Turret</GFL_AutoTurret_Aglaea_Label>
+	<GFL_AutoTurret_Aglaea_Description>An autonomous defensive turret deployed by Aglaea's tactical systems. This automated weapons platform inherits combat capabilities from its summoner and engages hostiles independently.\n\nBegins deployment with Negative Charge. When destroyed, grants the summoner +1 Confectance Index.</GFL_AutoTurret_Aglaea_Description>
+
+</LanguageData>

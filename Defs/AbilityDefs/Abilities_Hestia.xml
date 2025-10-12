@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Fissioned Firelight Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_FissionedFirelight</defName>
+		<label>Fissioned Firelight</label>
+		<description>Fire a precision shot that deals 120% weapon damage and applies 2 stacks of Rend (max 8) to the target. Each successful hit grants the caster +2 Confectance Index.\n\nRend Effect: +30% physical damage taken per stack\n\nCooldown: 18 seconds\nRange: 6 tiles\nDamage Type: Bullet</description>
+		<iconPath>UI/Icons/Abilities/FissionedFirelight</iconPath>
+		<cooldownTicksRange>
+			<min>1080</min>
+			<max>1080</max>
+		</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<category>WeaponAbility</category>
+		<displayOrder>100</displayOrder>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_FissionedFirelight</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<range>6</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>Shot_Autopistol</soundCast>
+			<targetParams>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- No Survivors Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_NoSurvivors</defName>
+		<label>No Survivors</label>
+		<description>Unleash a devastating execution attack that deals 160% weapon damage to the primary target. All enemies within 6 tiles that have Rend stacks receive Gash stacks equal to the primary target's Rend count.\n\nIf the primary target has 6+ Rend stacks, consume 6 stacks and gain +120% bonus damage (total 280% weapon damage).\n\nGash Effect: 8% applier attack per stack, consumes 2 stacks per tick\n\nCooldown: 2 minutes\nRange: 6 tiles\nAoE: 6 tiles (Gash spread)\nDamage Type: Bullet</description>
+		<iconPath>UI/Icons/Abilities/NoSurvivors</iconPath>
+		<cooldownTicksRange>
+			<min>7200</min>
+			<max>7200</max>
+		</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<category>WeaponAbility</category>
+		<displayOrder>101</displayOrder>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_NoSurvivors</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<range>6</range>
+			<warmupTime>1.0</warmupTime>
+			<soundCast>Shot_Autopistol</soundCast>
+			<targetParams>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

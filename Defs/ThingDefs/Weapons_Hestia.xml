@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Hestia (CZ75) Pistol -->
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>GFL_Weapon_Hestia</defName>
+		<label>Hestia</label>
+		<description>A reliable CZ75 pistol with integrated tactical systems. This sidearm excels at applying devastating debuffs through precise shots, stacking vulnerabilities on targets before delivering a crushing final blow.\n\nEquipped with two abilities:\n- Fissioned Firelight: Apply defense-shredding Rend stacks while building momentum\n- No Survivors: Consume stacked Rend to spread lethal Gash effects across all marked targets</description>
+		<techLevel>Industrial</techLevel>
+		<graphicData>
+			<texPath>Things/Weapons/Hestia/Hestia</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>Things/Weapons/Hestia/Hestia</uiIconPath>
+		<soundInteract>Interact_Autopistol</soundInteract>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.95</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.65</AccuracyMedium>
+			<AccuracyLong>0.40</AccuracyLong>
+			<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+			<MarketValue>450</MarketValue>
+		</statBases>
+		<costList>
+			<Steel>40</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+			<li>Gun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_Hestia</defaultProjectile>
+				<warmupTime>0.6</warmupTime>
+				<range>25</range>
+				<soundCast>Shot_Autopistol</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="GFL_Weap.CompProperties_WeaponAbilities">
+				<abilities>
+					<li>GFL_Ability_FissionedFirelight</li>
+					<li>GFL_Ability_NoSurvivors</li>
+				</abilities>
+			</li>
+			<li Class="GFL_Weap.CompProperties_PlayerOnly" />
+		</comps>
+	</ThingDef>
+
+	<!-- Hestia Bullet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_Hestia</defName>
+		<label>pistol bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<speed>70</speed>
+			<armorPenetrationBase>0.25</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+
+</Defs>

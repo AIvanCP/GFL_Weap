@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Aglaea Auto-Turret -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>GFL_AutoTurret_Aglaea</defName>
+		<label>Aglaea auto-turret</label>
+		<description>An automated defensive turret summoned by the Aglaea weapon. Inherits stats from its creator and automatically attacks nearby enemies.</description>
+		<thingClass>GFL_Weap.Building_AutoTurret</thingClass>
+		<category>Building</category>
+		<tickerType>Normal</tickerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Turret/Aglaea-Turret/auto-turret_body</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.1, 0.1)</drawSize> <!-- Body: invisible (minimal size) -->
+		</graphicData>
+		<uiIconPath>Things/Turret/Aglaea-Turret/auto-turret_head</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>false</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>10</Mass>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>GFL_AutoTurret_Gun</turretGunDef>
+			<turretBurstCooldownTime>1.2</turretBurstCooldownTime>
+			<turretTopDrawSize>1.2</turretTopDrawSize> <!-- Head draw size -->
+		</building>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>1.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="GFL_Weap.CompProperties_AutoTurret">
+				<!-- Custom comp for turret behavior, stat inheritance, and on-death triggers -->
+			</li>
+		</comps>
+		<size>(1,1)</size>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>GasOperation</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<!-- Turret Gun (for the rotating head) -->
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>GFL_AutoTurret_Gun</defName>
+		<label>auto-turret gun</label>
+		<description>Mounted weapon of an Aglaea auto-turret.</description>
+		<graphicData>
+			<texPath>Things/Turret/Aglaea-Turret/auto-turret_head</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2, 1.2)</drawSize> <!-- Head: larger, visible as main turret -->
+			<drawOffset>(0, 0, 0)</drawOffset> <!-- Head: centered -->
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.70</AccuracyTouch>
+			<AccuracyShort>0.64</AccuracyShort>
+			<AccuracyMedium>0.41</AccuracyMedium>
+			<AccuracyLong>0.22</AccuracyLong>
+			<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>GFL_Bullet_AutoTurret</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>24</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>2</burstShotCount>
+				<soundCast>Shot_TurretMini</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>0</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Turret Bullet -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>GFL_Bullet_AutoTurret</defName>
+		<label>turret bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

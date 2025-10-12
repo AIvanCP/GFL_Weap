@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Searing Sizzle Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_SearingSizzle</defName>
+		<label>Searing Sizzle</label>
+		<description>Focus a burst of superheated pellets at a single target, dealing 120% weapon damage as burn damage. Targets within 4 tiles take an additional 5% bonus damage and +2 flat damage.\n\nCooldown: Instant\nRange: 6 tiles\nDamage Type: Burn</description>
+		<iconPath>UI/Icons/Abilities/SearingSizzle</iconPath>
+		<cooldownTicksRange>
+			<min>60</min>
+			<max>60</max>
+		</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<category>WeaponAbility</category>
+		<displayOrder>100</displayOrder>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_SearingSizzle</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<range>6</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>Ability_FireBurst</soundCast>
+			<targetParams>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Boil and Reduce Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_BoilAndReduce</defName>
+		<label>Boil and Reduce</label>
+		<description>Unleash a devastating area-of-effect inferno that consumes accumulated combat momentum (Confectance Index). Deals 90% weapon damage to all enemies in a 3-tile radius, increased by 5% per Confectance point consumed. All affected enemies receive stacking Scorch Mark debuffs.\n\nIf an enemy dies from this attack, their corpse explodes in a secondary firestorm with the same damage.\n\nCooldown: 30 seconds\nRange: 6 tiles\nAoE Radius: 3 tiles\nDamage Type: Burn</description>
+		<iconPath>UI/Icons/Abilities/BoilandReduce</iconPath>
+		<cooldownTicksRange>
+			<min>1800</min>
+			<max>1800</max>
+		</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<category>WeaponAbility</category>
+		<displayOrder>101</displayOrder>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_BoilAndReduce</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<range>6</range>
+			<warmupTime>1.0</warmupTime>
+			<soundCast>Ability_Explosion</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

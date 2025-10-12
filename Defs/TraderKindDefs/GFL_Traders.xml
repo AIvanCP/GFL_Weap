@@ -10,6 +10,22 @@
 				<thingDef>GFL_Weapon_Suomi</thingDef>
 				<countRange>0~1</countRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Aglaea</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Mosin</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Trailblazer</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Hestia</thingDef>
+				<countRange>0~1</countRange>
+			</li>
 		</stockGenerators>
 	</TraderKindDef>
 
@@ -22,6 +38,22 @@
 		<stockGenerators>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>GFL_Weapon_Suomi</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Aglaea</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Mosin</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Trailblazer</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Hestia</thingDef>
 				<countRange>0~1</countRange>
 			</li>
 			<li Class="StockGenerator_MarketValue">
