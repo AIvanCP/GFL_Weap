@@ -49,11 +49,20 @@ namespace GFL_Weap
                     float attackPower = attacker.GetStatValue(StatDefOf.ShootingAccuracyPawn) * 100f; // Proxy for attack
                     int bonusDamage = Mathf.RoundToInt(attackPower * 0.03f);
                     
-                    if (bonusDamage > 0)
+                    if (bonusDamage > 0 && pawn?.Map != null)
                     {
+                        // Store position before damage
+                        Vector3 pawnDrawPos = pawn.DrawPos;
+                        Map pawnMap = pawn.Map;
+                        
                         DamageInfo bonusDInfo = new DamageInfo(DamageDefOf.Burn, bonusDamage, 0f, -1f, attacker);
                         pawn.TakeDamage(bonusDInfo);
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, $"-{bonusDamage} Reapply!", new Color(0.8f, 0.8f, 1f), 1.5f);
+                        
+                        // Use stored references for visual feedback
+                        if (pawnMap != null)
+                        {
+                            MoteMaker.ThrowText(pawnDrawPos, pawnMap, $"-{bonusDamage} Reapply!", new Color(0.8f, 0.8f, 1f), 1.5f);
+                        }
                     }
                 }
             }
@@ -99,10 +108,19 @@ namespace GFL_Weap
 
                             foreach (Pawn target in targetsWithNegativeCharge)
                             {
+                                // Store target references before damage
+                                Vector3 targetDrawPos = target.DrawPos;
+                                Map targetMap = target.Map;
+                                
                                 DamageInfo splashDInfo = new DamageInfo(DamageDefOf.Burn, splashDamage, 0f, -1f, dinfo.Instigator);
                                 target.TakeDamage(splashDInfo);
-                                MoteMaker.ThrowText(target.DrawPos, target.Map, $"-{splashDamage} Splash!", new Color(0.5f, 0.7f, 1f), 1.2f);
-                                FleckMaker.ThrowLightningGlow(target.DrawPos, target.Map, 0.5f);
+                                
+                                // Use stored references for visual feedback
+                                if (targetMap != null && target.Spawned)
+                                {
+                                    MoteMaker.ThrowText(targetDrawPos, targetMap, $"-{splashDamage} Splash!", new Color(0.5f, 0.7f, 1f), 1.2f);
+                                    FleckMaker.ThrowLightningGlow(targetDrawPos, targetMap, 0.5f);
+                                }
                             }
 
                             if (targetsWithNegativeCharge.Count > 0)

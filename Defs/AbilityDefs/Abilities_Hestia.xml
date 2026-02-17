@@ -5,7 +5,7 @@
 	<AbilityDef>
 		<defName>GFL_Ability_FissionedFirelight</defName>
 		<label>Fissioned Firelight</label>
-		<description>Fire a precision shot that deals 120% weapon damage and applies 2 stacks of Rend (max 8) to the target. Each successful hit grants the caster +2 Confectance Index.\n\nRend Effect: +30% physical damage taken per stack\n\nCooldown: 18 seconds\nRange: 6 tiles\nDamage Type: Bullet</description>
+		<description>Fire a precision shot that deals 120% weapon damage and applies 2 stacks of Rend (max 8) to the target. Each successful hit grants the caster +2 Confectance Index.\n\nRend Effect: +30% physical damage taken per stack\n\nCooldown: 18 seconds\nRange: 25 tiles\nDamage Type: Bullet</description>
 		<iconPath>UI/Icons/Abilities/FissionedFirelight</iconPath>
 		<cooldownTicksRange>
 			<min>1080</min>
@@ -18,7 +18,7 @@
 			<verbClass>GFL_Weap.Verb_FissionedFirelight</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
 			<targetable>true</targetable>
-			<range>6</range>
+			<range>25</range>
 			<warmupTime>0.5</warmupTime>
 			<soundCast>Shot_Autopistol</soundCast>
 			<targetParams>
@@ -36,7 +36,7 @@
 	<AbilityDef>
 		<defName>GFL_Ability_NoSurvivors</defName>
 		<label>No Survivors</label>
-		<description>Unleash a devastating execution attack that deals 160% weapon damage to the primary target. All enemies within 6 tiles that have Rend stacks receive Gash stacks equal to the primary target's Rend count.\n\nIf the primary target has 6+ Rend stacks, consume 6 stacks and gain +120% bonus damage (total 280% weapon damage).\n\nGash Effect: 8% applier attack per stack, consumes 2 stacks per tick\n\nCooldown: 2 minutes\nRange: 6 tiles\nAoE: 6 tiles (Gash spread)\nDamage Type: Bullet</description>
+		<description>Unleash a devastating execution attack that deals 160% weapon damage to the primary target. All enemies within 6 tiles that have Rend stacks receive Gash stacks equal to the primary target's Rend count.\n\nIf the primary target has 6+ Rend stacks, consume 6 stacks and gain +120% bonus damage (total 280% weapon damage).\n\nGash Effect: 8% applier attack per stack, consumes 2 stacks per tick\n\nCooldown: 2 minutes\nRange: 25 tiles\nAoE: 6 tiles (Gash spread)\nDamage Type: Bullet</description>
 		<iconPath>UI/Icons/Abilities/NoSurvivors</iconPath>
 		<cooldownTicksRange>
 			<min>7200</min>
@@ -49,7 +49,7 @@
 			<verbClass>GFL_Weap.Verb_NoSurvivors</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
 			<targetable>true</targetable>
-			<range>6</range>
+			<range>25</range>
 			<warmupTime>1.0</warmupTime>
 			<soundCast>Shot_Autopistol</soundCast>
 			<targetParams>

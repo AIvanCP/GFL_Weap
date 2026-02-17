@@ -13,7 +13,7 @@
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>GFL_Weap.Verb_TargetVictory</verbClass>
-			<range>35</range> <!-- Sniper range: increased from 9 -->
+			<range>42</range> <!-- Sniper range: increased to weapon range -->
 			<warmupTime>0.8</warmupTime>
 			<soundCast>Shot_ChargeRifle</soundCast>
 			<targetParams>
@@ -39,7 +39,7 @@
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>GFL_Weap.Verb_DeclarationOfVictory</verbClass>
-			<range>35</range> <!-- Sniper range: increased from 9 -->
+			<range>42</range> <!-- Sniper range: increased to weapon range -->
 			<warmupTime>1.2</warmupTime>
 			<soundCast>Shot_ChargeRifle</soundCast>
 			<targetParams>

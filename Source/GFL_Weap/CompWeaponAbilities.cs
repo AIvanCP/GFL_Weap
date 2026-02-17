@@ -19,6 +19,12 @@ namespace GFL_Weap
             base.Notify_Equipped(pawn);
             try
             {
+                // Skip during pawn generation to avoid conflicts with other mods
+                if (pawn == null || !pawn.Spawned || pawn.Map == null)
+                {
+                    return;
+                }
+
                 // Grant abilities when equipped
                 if (pawn.abilities == null)
                 {
@@ -52,6 +58,12 @@ namespace GFL_Weap
             base.Notify_Unequipped(pawn);
             try
             {
+                // Skip if pawn is null or not properly initialized
+                if (pawn == null)
+                {
+                    return;
+                }
+
                 // Remove abilities when unequipped
                 if (pawn.abilities != null && Props.abilities != null)
                 {

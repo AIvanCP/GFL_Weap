@@ -83,8 +83,8 @@ namespace GFL_Weap
 
                 targetPawn.TakeDamage(dinfo);
 
-                // Visual effects - fire mote with blue/orange tint
-                if (targetPawn.Map != null)
+                // Visual effects - fire mote with blue/orange tint (check if pawn still exists)
+                if (targetPawn.Map != null && targetPawn.Spawned && !targetPawn.Dead)
                 {
                     // Throw fire glow effect
                     FleckMaker.ThrowFireGlow(targetPawn.Position.ToVector3Shifted(), targetPawn.Map, 1.5f);

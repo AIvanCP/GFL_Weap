@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Corrosion Bomb Projectile - Grenade style with arc -->
+	<ThingDef ParentName="BaseProjectileNeolithic">
+		<defName>GFL_Projectile_CorrosionBomb</defName>
+		<label>corrosion bomb</label>
+		<thingClass>GFL_Weap.Projectile_CorrosionBomb</thingClass>
+		<graphicData>
+			<texPath>Projectiles/ToxicBomb</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.6</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>GFL_CorrosionDamage</damageDef>
+			<speed>12</speed>
+			<arcHeightFactor>0.6</arcHeightFactor>
+			<shadowSize>0.8</shadowSize>
+		</projectile>
+	</ThingDef>
+
+</Defs>

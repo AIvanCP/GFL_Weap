@@ -114,23 +114,31 @@ namespace GFL_Weap
                     DamageInfo.SourceCategory.ThingOrUnknown
                 );
 
+                // Store position before damage for AoE spreading (pawn might die)
+                IntVec3 targetPos = targetPawn.Position;
+                Map targetMap = targetPawn.Map;
+                Vector3 targetDrawPos = targetPawn.DrawPos;
+                
                 targetPawn.TakeDamage(dinfo);
 
-                // Spread Gash to all Rend holders in AoE
-                SpreadGashToRendHolders(targetPawn.Position, CasterPawn.Map, targetRendStacks, baseDamage);
+                // Spread Gash to all Rend holders in AoE (use stored position)
+                if (targetMap != null)
+                {
+                    SpreadGashToRendHolders(targetPos, targetMap, targetRendStacks, baseDamage);
+                }
 
-                // Visual effects
-                if (targetPawn.Map != null)
+                // Visual effects (check if pawn still exists)
+                if (targetMap != null && targetPawn.Spawned)
                 {
                     // Main target effects
-                    FleckMaker.ThrowExplosionCell(targetPawn.Position, targetPawn.Map, FleckDefOf.ExplosionFlash, Color.red);
-                    FleckMaker.ThrowSmoke(targetPawn.Position.ToVector3Shifted(), targetPawn.Map, 2f);
+                    FleckMaker.ThrowExplosionCell(targetPos, targetMap, FleckDefOf.ExplosionFlash, Color.red);
+                    FleckMaker.ThrowSmoke(targetPos.ToVector3Shifted(), targetMap, 2f);
                     
                     string damageText = applyBonus ? $"{Mathf.RoundToInt(damage)} (EXECUTE!)" : $"{Mathf.RoundToInt(damage)} (no survivors)";
-                    MoteMaker.ThrowText(targetPawn.DrawPos, targetPawn.Map, damageText, 3f);
+                    MoteMaker.ThrowText(targetDrawPos, targetMap, damageText, 3f);
 
                     // AoE indicator
-                    FleckMaker.ThrowLightningGlow(targetPawn.Position.ToVector3Shifted(), targetPawn.Map, AOE_RADIUS);
+                    FleckMaker.ThrowLightningGlow(targetPos.ToVector3Shifted(), targetMap, AOE_RADIUS);
                 }
 
                 return true;

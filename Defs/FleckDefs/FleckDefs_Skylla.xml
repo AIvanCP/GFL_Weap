@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Ground explosion overlay - static decal renders behind pawns with transparency -->
+  <FleckDef>
+    <defName>GFL_Fleck_PurpleExplosion</defName>
+    <fleckSystemClass>Verse.FleckSystemStatic</fleckSystemClass>
+    <graphicData>
+      <texPath>Effects/PurpleExplosion</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <drawSize>1.0</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(0.6, 0.2, 0.8, 0.5)</color> <!-- Less bright purple with 50% alpha to avoid covering pawns -->
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.2</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+  </FleckDef>
+
+  <!-- Additive spark particles - thrown flecks render on top with glow -->
+  <FleckDef>
+    <defName>GFL_Fleck_PurpleSpark</defName>
+    <fleckSystemClass>Verse.FleckSystemThrown</fleckSystemClass>
+    <graphicData>
+      <texPath>Effects/PurpleSpark</texPath>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <drawSize>0.6</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(0.5, 0, 0.7, 0.6)</color> <!-- Less bright purple with 60% alpha -->
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.08</solidTime>
+    <fadeOutTime>0.2</fadeOutTime>
+  </FleckDef>
+
+</Defs>

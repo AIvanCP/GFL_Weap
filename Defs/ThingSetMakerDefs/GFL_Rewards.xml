@@ -9,6 +9,8 @@
 				<filter>
 					<thingDefs>
 						<li>GFL_Weapon_Suomi</li>
+						<li>GFL_Weapon_Skylla</li>
+						<li>GFL_Weapon_Radiance</li>
 					</thingDefs>
 				</filter>
 			</fixedParams>

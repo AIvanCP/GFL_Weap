@@ -1,5 +1,5 @@
-# Build outputs
-Assemblies/*.dll
+# Build outputs (keep DLL for users, ignore debug files)
+# Assemblies/*.dll  # Commented out - DLL should be in repo for users
 Assemblies/*.pdb
 Assemblies/*.mdb
 

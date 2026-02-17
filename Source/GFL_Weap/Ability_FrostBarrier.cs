@@ -62,21 +62,24 @@ namespace GFL_Weap
                                     DamageInfo damageInfo = new DamageInfo(frostDmg, damage, 0f, -1f, CasterPawn);
                                     pawn.TakeDamage(damageInfo);
 
-                                    // Apply Avalanche debuff (stack 2)
-                                    HediffDef avalancheDef = DefDatabase<HediffDef>.GetNamedSilentFail("GFL_Hediff_Avalanche");
-                                    if (avalancheDef != null)
+                                    // Apply Avalanche debuff (stack 2) - only if still alive
+                                    if (!pawn.Dead && pawn.health != null)
                                     {
-                                        // Apply twice for stack 2
-                                        Hediff existingAvalanche = pawn.health.hediffSet.GetFirstHediffOfDef(avalancheDef);
-                                        if (existingAvalanche != null)
+                                        HediffDef avalancheDef = DefDatabase<HediffDef>.GetNamedSilentFail("GFL_Hediff_Avalanche");
+                                        if (avalancheDef != null)
                                         {
-                                            existingAvalanche.Severity = Mathf.Min(existingAvalanche.Severity + 1f, 2f);
-                                        }
-                                        else
-                                        {
-                                            Hediff avalanche = HediffMaker.MakeHediff(avalancheDef, pawn);
-                                            avalanche.Severity = 2f;
-                                            pawn.health.AddHediff(avalanche);
+                                            // Apply twice for stack 2
+                                            Hediff existingAvalanche = pawn.health.hediffSet.GetFirstHediffOfDef(avalancheDef);
+                                            if (existingAvalanche != null)
+                                            {
+                                                existingAvalanche.Severity = Mathf.Min(existingAvalanche.Severity + 1f, 2f);
+                                            }
+                                            else
+                                            {
+                                                Hediff avalanche = HediffMaker.MakeHediff(avalancheDef, pawn);
+                                                avalanche.Severity = 2f;
+                                                pawn.health.AddHediff(avalanche);
+                                            }
                                         }
                                     }
 
@@ -248,6 +251,11 @@ namespace GFL_Weap
                                         {
                                             Hediff frostDebuff = HediffMaker.MakeHediff(frostTerrainDef, pawn);
                                             pawn.health.AddHediff(frostDebuff);
+                                        }
+                                        else
+                                        {
+                                            // Refresh hediff duration while standing on frost terrain
+                                            existing.ageTicks = 0;
                                         }
                                     }
                                 }

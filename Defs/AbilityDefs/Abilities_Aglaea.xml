@@ -5,7 +5,7 @@
 	<AbilityDef>
 		<defName>GFL_Ability_GentleOffensive</defName>
 		<label>Gentle Offensive</label>
-		<description>Summon an auto-turret on an empty tile within 5 tiles. The turret inherits 50% of your HP and attack power, and 100% of your defense. Maximum 2 turrets active at once. When a turret dies, gain +1 Confectance Index.\n\nCooldown: Instant (no cooldown)</description>
+		<description>Summon an auto-turret on an empty tile within 30 tiles. The turret inherits 50% of your HP and attack power, and 100% of your defense. Maximum 2 turrets active at once. When a turret dies, gain +1 Confectance Index.\n\nCooldown: Instant (no cooldown)</description>
 		<iconPath>UI/Icons/Abilities/GentleOffensive</iconPath>
 		<cooldownTicksRange>1</cooldownTicksRange> <!-- Instant reuse -->
 		<aiCanUse>false</aiCanUse>
@@ -13,7 +13,7 @@
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>GFL_Weap.Verb_GentleOffensive</verbClass>
-			<range>5</range> <!-- AR range: increased from 3 -->
+			<range>30</range> <!-- AR range: increased to weapon range -->
 			<warmupTime>0.5</warmupTime>
 			<soundCast>Interact_Constructive</soundCast>
 			<targetParams>

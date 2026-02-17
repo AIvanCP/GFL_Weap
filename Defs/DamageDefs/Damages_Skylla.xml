@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Corrosion Damage Type -->
+	<DamageDef>
+		<defName>GFL_CorrosionDamage</defName>
+		<label>corrosion</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been dissolved by corrosion.</deathMessage>
+		<hediff>Cut</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<defaultDamage>15</defaultDamage>
+		<defaultStoppingPower>0.6</defaultStoppingPower>
+		<overkillPctToDestroyPart>0</overkillPctToDestroyPart>
+	</DamageDef>
+
+</Defs>

@@ -30,6 +30,13 @@ namespace GFL_Weap
                     return;
                 }
 
+                // CRITICAL: Skip during pawn generation (before spawn)
+                // Prevents cascading null reference errors with other mods during map initialization
+                if (!pawn.Spawned || pawn.Map == null)
+                {
+                    return;
+                }
+
                 // Check if equipped by non-player faction
                 if (pawn.Faction != Faction.OfPlayer)
                 {

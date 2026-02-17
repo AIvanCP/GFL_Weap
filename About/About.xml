@@ -7,18 +7,28 @@
 		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>Adds weapons from Girls' Frontline with unique abilities. Currently includes:
+	<description>Adds 7 unique weapons from Girls' Frontline with special abilities and status effects.
 
-Suomi SMG - Frost-based abilities:
-- Freeze Shot: Launch a freezing bolt that deals damage and stuns enemies, with stun duration scaling based on nearby allies.
-- Frost Barrier (Ultimate): Create an area of frost terrain, deal AoE damage, apply slow debuffs, and grant allies protective shields with healing.
+1. SUOMI SMG - Frost control with shields and terrain
+2. MOSIN-NAGANT - Electric sniper with conductivity
+3. AGLAEA - Tactical AI with auto-turrets and buffs
+4. TRAILBLAZER - Fire shotgun with burn stacking
+5. HESTIA (CZ75) - Momentum pistol with Rend/Gash combo
+6. SKYLLA - Corrosive AR with chain explosions
+7. RADIANCE - Hydro support sniper with follower summon
 
-Weapons are player-only and can be obtained through trading, quest rewards, or crafting.
+All weapons are player-only and obtained through trading, quests, or crafting (Gas Operation research required).
 
-Compatible with vanilla and Combat Extended.
+KEY FEATURES:
+- 14 unique abilities (2 per weapon)
+- 20+ status effects (buffs/debuffs)
+- Elemental damage types (Frost, Electric, Fire, Corrosion, Hydro)
+- Chain reaction mechanics
+- Summoning system (turrets, followers)
+- Compatible with vanilla and Combat Extended
 
-Credits:
-Original Characters and Concepts © Girls' Frontline / Sunborn Games / MICA Team
+CREDITS:
+Original Characters © Girls' Frontline / Sunborn Games / MICA Team
 This is a fan-made mod and is not officially affiliated with Girls' Frontline.</description>
 	<modDependencies>
 	</modDependencies>

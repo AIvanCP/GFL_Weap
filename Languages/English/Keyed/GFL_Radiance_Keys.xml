@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Weapon Labels -->
+	<GFL_Weapon_Radiance.label>Radiance</GFL_Weapon_Radiance.label>
+	<GFL_Weapon_Radiance.description>An advanced sniper rifle with integrated Hydro manipulation systems. When equipped, grants the wielder access to Intel Manipulation (single-target Hydro shot that applies debuffs) and Path of Protection (AoE Hydro blast that summons Taryz and grants powerful buffs to allies).</GFL_Weapon_Radiance.description>
+
+	<!-- Ability Labels -->
+	<GFL_Ability_IntelManipulation.label>Intel Manipulation</GFL_Ability_IntelManipulation.label>
+	<GFL_Ability_IntelManipulation.description>Launch a Hydro shot at an enemy (9 tiles). Deals 130% weapon damage and applies False Intelligence (2 turns) and Congestion (1 turn). Grants +1 Confectance Index to the user.</GFL_Ability_IntelManipulation.description>
+
+	<GFL_Ability_PathOfProtection.label>Path of Protection</GFL_Ability_PathOfProtection.label>
+	<GFL_Ability_PathOfProtection.description>Create an AoE Hydro explosion at target enemy (9 tiles, radius 3). Deals 80% weapon damage and applies Damp + False Intelligence. Summons Taryz to follow the target for 2 rounds (counterattacks, retargets on death). Grants all allies Deep-Rooted Bonds (2× HP, heal on expire) and Overflowing Care (convert overheal to Hydro damage bonus). Heals allies and cleanses 1 negative effect.</GFL_Ability_PathOfProtection.description>
+
+	<!-- Hediff Labels -->
+	<GFL_Hediff_FalseIntelligence.label>false intelligence</GFL_Hediff_FalseIntelligence.label>
+	<GFL_Hediff_FalseIntelligence.description>Mind clouded by false information. +20% stagger chance, +10% Hydro damage taken. Uncleanseable.</GFL_Hediff_FalseIntelligence.description>
+
+	<GFL_Hediff_Congestion.label>congestion</GFL_Hediff_Congestion.label>
+	<GFL_Hediff_Congestion.description>Afflicted with total congestion. Cannot heal at all. Uncleanseable.</GFL_Hediff_Congestion.description>
+
+	<GFL_Hediff_Damp.label>damp</GFL_Hediff_Damp.label>
+	<GFL_Hediff_Damp.description>Hydro energy dampens healing. -40% healing effectiveness per stack. At 2 stacks, transforms into Congestion.</GFL_Hediff_Damp.description>
+
+	<GFL_Hediff_DeepRootedBonds.label>deep-rooted bonds</GFL_Hediff_DeepRootedBonds.label>
+	<GFL_Hediff_DeepRootedBonds.description>Bound by deep protection. Max HP doubled. On expiration, fully heals the bearer. Uncleanseable.</GFL_Hediff_DeepRootedBonds.description>
+
+	<GFL_Hediff_OverflowingCare.label>overflowing care</GFL_Hediff_OverflowingCare.label>
+	<GFL_Hediff_OverflowingCare.description>Passively heals after actions. Overheal is converted to Hydro damage bonus (1.5% overheal = +1% Hydro damage, max +35%). Uncleanseable.</GFL_Hediff_OverflowingCare.description>
+
+	<GFL_Hediff_TaryzTracker.label>taryz tracking</GFL_Hediff_TaryzTracker.label>
+	<GFL_Hediff_TaryzTracker.description>Being tracked by Taryz. Will counterattack if this pawn attacks an ally. On death, Taryz retargets to another enemy.</GFL_Hediff_TaryzTracker.description>
+
+	<GFL_Hediff_ConfectanceIndex.label>confectance index</GFL_Hediff_ConfectanceIndex.label>
+	<GFL_Hediff_ConfectanceIndex.description>Momentum stacks gained from precision attacks. Each stack provides small combat bonuses.</GFL_Hediff_ConfectanceIndex.description>
+
+	<!-- Damage Labels -->
+	<GFL_HydroDamage.label>hydro</GFL_HydroDamage.label>
+	<GFL_HydroDamage.deathMessage>{0} has been overwhelmed by Hydro energy.</GFL_HydroDamage.deathMessage>
+
+</LanguageData>

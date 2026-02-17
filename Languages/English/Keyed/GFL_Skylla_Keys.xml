@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Weapon Labels -->
+	<GFL_Weapon_Skylla.label>Skylla</GFL_Weapon_Skylla.label>
+	<GFL_Weapon_Skylla.description>An advanced corrosive assault rifle with toxic infiltration systems. When equipped, grants the wielder access to Overpowering Corrosion (throw toxic bomb that chains on kill) and Devastating Drift (dash attack with explosive trail). Toxic Infiltration spreads on enemy death.</GFL_Weapon_Skylla.description>
+
+	<!-- Ability Labels -->
+	<GFL_Ability_OverpoweringCorrosion.label>Overpowering Corrosion</GFL_Ability_OverpoweringCorrosion.label>
+	<GFL_Ability_OverpoweringCorrosion.description>Throw a corrosive bomb at target location (8 tiles). Deals 90% weapon damage in a 3-tile radius and applies Toxic Infiltration. Targets already affected by Toxic Infiltration take +15% bonus damage. 15% chance for secondary explosion (1.2 tile radius). When affected enemies die, they explode and spread Toxic Infiltration to nearby enemies.</GFL_Ability_OverpoweringCorrosion.description>
+
+	<GFL_Ability_DevastatingDrift.label>Devastating Drift</GFL_Ability_DevastatingDrift.label>
+	<GFL_Ability_DevastatingDrift.description>Dash to a location 4-8 tiles away, creating a 5-tile-wide purple explosion trail. Deals 100% weapon damage to all enemies in the path and applies Toxic Infiltration. If 2+ enemies die from this ability, gain 1 extra cast (once per activation). Avoids walls and unreachable areas. Safe for allies.</GFL_Ability_DevastatingDrift.description>
+
+	<!-- Hediff Labels -->
+	<GFL_Hediff_ToxicInfiltration.label>toxic infiltration</GFL_Hediff_ToxicInfiltration.label>
+	<GFL_Hediff_ToxicInfiltration.description>Afflicted with toxic corrosion. Adds 1 stack of Corrosive Infusion each turn. On death, explodes in a purple cloud that spreads this effect to nearby enemies.</GFL_Hediff_ToxicInfiltration.description>
+
+	<GFL_Hediff_CorrosiveInfusion.label>corrosive infusion</GFL_Hediff_CorrosiveInfusion.label>
+	<GFL_Hediff_CorrosiveInfusion.description>Stacks of corrosion damage that deal periodic AoE DOT. Each stack deals 12% of attacker's weapon damage. Gains stacks from Toxic Infiltration and corrosion damage. Maximum 10 stacks.</GFL_Hediff_CorrosiveInfusion.description>
+
+	<!-- Damage Labels -->
+	<GFL_CorrosionDamage.label>corrosion</GFL_CorrosionDamage.label>
+	<GFL_CorrosionDamage.deathMessage>{0} has been dissolved by corrosion.</GFL_CorrosionDamage.deathMessage>
+
+</LanguageData>

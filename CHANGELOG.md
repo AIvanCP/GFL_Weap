@@ -1,5 +1,21 @@
 # Changelog - GFL Weapons Mod
 
+## Version 1.4.2 (February 17, 2026)
+
+### Fixed
+- **Critical**: Fixed Suomi Frost Barrier terrain affecting allies
+  - Changed frost terrain pathCost from 20 to 1 (normal walking speed)
+  - Frost terrain slow effect now only applies to enemies via hediff system
+  - Allies can now walk through frost zones without movement penalty
+  - Enemy-only slow mechanic now matches Girls' Frontline 2 behavior
+
+### Technical
+- DLL now included in repository for easy mod distribution
+- Updated .gitignore to allow GFL_Weap.dll tracking
+- Build successful: GFL_Weap.dll (93,696 bytes)
+- Zero compilation errors or warnings
+- All abilities and effects verified working correctly
+
 ## Version 1.4.1 (October 9, 2025)
 
 ### Fixed

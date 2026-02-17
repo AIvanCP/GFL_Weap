@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Overpowering Corrosion Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_OverpoweringCorrosion</defName>
+		<label>Overpowering Corrosion</label>
+		<description>Throw a corrosive bomb at target location (max weapon range). Deals 90% weapon damage in a 5-tile radius and applies Toxic Infiltration. Targets already affected by Toxic Infiltration take +15% bonus damage. 15% chance for secondary explosion (1.2 tile radius). When affected enemies die, they explode and spread Toxic Infiltration to nearby enemies.</description>
+		<iconPath>UI/Icons/Abilities/OverpoweringCorrosion</iconPath>
+		<cooldownTicksRange>360</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<statBases>
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_OverpoweringCorrosion</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.8</warmupTime>
+			<range>28</range>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Devastating Drift Ultimate Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_DevastatingDrift</defName>
+		<label>Devastating Drift</label>
+		<description>Dash to a location 4-28 tiles away, creating a 5-tile-wide purple explosion trail. Deals 100% weapon damage to all enemies in the path and applies Toxic Infiltration. If 2+ enemies die from this ability, gain 1 extra cast (once per activation). Avoids walls and unreachable areas. Safe for allies.</description>
+		<iconPath>UI/Icons/Abilities/DevastatingDrift</iconPath>
+		<cooldownTicksRange>900</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<statBases>
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_DevastatingDrift</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<minRange>4</minRange>
+			<range>28</range>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

@@ -9,7 +9,7 @@
 		<texturePath>Terrain/Surfaces/Ice</texturePath>
 		<edgeType>Hard</edgeType>
 		<renderPrecedence>100</renderPrecedence>
-		<pathCost>20</pathCost>
+		<pathCost>1</pathCost>
 		<statBases>
 			<Beauty>1</Beauty>
 			<Cleanliness>0</Cleanliness>

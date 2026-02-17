@@ -148,6 +148,142 @@ A RimWorld mod that adds weapons from Girls' Frontline with unique abilities. Th
   - Gash stacks = primary target's current Rend count
 - Visual: Explosion flash + smoke + "EXECUTE!" text on bonus trigger
 
+### 6. Skylla Assault Rifle
+- Advanced corrosive assault rifle with toxic infiltration systems
+- 14 base damage, 3-round burst, 28-tile range
+- 0.32 armor penetration, 1.65s cooldown
+- High cost (75 Steel + 5 Components + 12 Plasteel + 15 Chemfuel)
+- **Player-only weapon**
+
+#### Overpowering Corrosion Ability
+- Cooldown: 6 seconds
+- Range: 8 tiles (target location)
+- **Throws a corrosive grenade** (arcing trajectory, NOT straight shot)
+- **5-tile radius explosion** (large AoE)
+- Deals 90% weapon damage + applies **Toxic Infiltration**
+- Targets already with Toxic Infiltration take +15% bonus damage
+- 15% chance for secondary mini-explosion (1.2 tile radius)
+- When affected enemies die → **vibrant purple explosion** spreads Toxic Infiltration
+- **SAFE FOR PLAYER FACTION** (never affects allies or player pawns)
+- Visual: Vibrant purple explosions, toxic dust, purple motes
+
+#### Devastating Drift Ultimate Ability
+- Cooldown: 15 seconds
+- Range: 4-8 tiles (dash distance)
+- Dash to target location, creating 5-tile-wide **vibrant purple explosion trail**
+- Deals 100% weapon damage to all enemies in path
+- Applies **Toxic Infiltration** to all hit enemies
+- If 2+ enemies die → gain 1 extra cast (once per activation)
+- Avoids walls and unreachable areas
+- **SAFE FOR PLAYER FACTION** (never affects allies or player pawns)
+- Visual: Vibrant purple explosion trail with dust puffs and motes
+
+#### Status Effects
+
+**Toxic Infiltration**
+- Duration: 20 seconds (1200 ticks)
+- Adds 1 stack of Corrosive Infusion every second
+- On death: **6-tile radius purple explosion** spreads Toxic Infiltration to nearby enemies
+- Chain reaction: Up to 10 explosions per 0.5 seconds
+- **SAFE FOR PLAYER FACTION** (never spreads to allies)
+- Unremovable debuff
+- Visual: Vibrant purple toxic clouds and motes
+
+**Corrosive Infusion**
+- Stackable: 1-10 stacks
+- Duration: 10 seconds (refreshes on new stacks)
+- Deals AoE DOT every second = 12% × stacks × weapon damage
+- Affects enemies within 1.5 tiles
+- Gains stacks from Toxic Infiltration ticks and corrosion damage hits
+- At 5+ stacks: -10% movement speed
+- At 10 stacks: -20% movement speed (critical)
+- Visual: Purple dust puffs on tick damage
+
+### 7. Radiance Sniper Rifle
+- Precision Hydro sniper rifle with tactical support and follower summon
+- 30 base damage, single shot, 45-tile range
+- 0.38 armor penetration, 2.5s cooldown
+- High cost (80 Steel + 5 Components + 10 Gold + 15 Plasteel)
+- **Player-only weapon**
+
+#### Intel Manipulation Ability
+- Cooldown: 7 seconds
+- Range: 35 tiles
+- Fires a Hydro shot dealing 130% weapon damage
+- Applies **False Intelligence** (vulnerability, 40s duration)
+- Applies **Congestion** (no healing, 20s duration)
+- Grants +1 **Confectance Index** to caster
+- Visual: Blue Hydro explosion effects
+
+#### Path of Protection Ultimate Ability
+- Cooldown: 30 seconds
+- Range: 35 tiles (target location)
+- Creates 3-tile radius Hydro explosion
+- Deals 80% weapon damage to all enemies in area
+- **Enemy Effects**:
+  - Applies **Damp** debuff (1 stack, transforms to Congestion at 2 stacks)
+  - Applies **False Intelligence** to primary target
+  - Summons **Taryz Tracker** to primary target
+- **Ally Effects** (all allies within 35 tiles):
+  - Applies **Deep-Rooted Bonds** (2× max HP, heals 30 HP on expire, 50s duration)
+  - Applies **Overflowing Care** (passive healing + overheal conversion, 50s duration)
+  - Heals 20 HP immediately
+  - Cleanses 1 negative hediff
+- **Safe for allies** (no friendly fire)
+- Visual: Blue Hydro explosion, lightning glow
+
+#### Status Effects
+
+**False Intelligence**
+- Duration: 40 seconds (2400 ticks)
+- +20% stagger chance
+- +10% Hydro damage taken (bonus damage applied on hit)
+- Unremovable debuff
+- Visual: Blue dust puff on application, bonus damage text
+
+**Congestion**
+- Duration: 20 seconds (1200 ticks)
+- No healing from any source (wounds, medicines, etc.)
+- Can be applied directly or transformed from 2 stacks of Damp
+- Cleanseable
+- Visual: Blue explosion flash on transformation from Damp
+
+**Damp**
+- Duration: 15 seconds (900 ticks)
+- Stackable: 1-2 stacks
+- -40% healing per stack
+- At 2 stacks: Transforms into Congestion (stronger debuff)
+- Cleanseable
+- Visual: Blue dust puff, explosion flash on transformation
+
+**Deep-Rooted Bonds** (Ally buff)
+- Duration: 50 seconds (3000 ticks)
+- **2× max HP**: Multiplies ALL body part HP by 2 (head, torso, limbs, organs - everything doubles)
+- On expire: Heals 30 HP
+- Applied to **ALL allies on the current map** (full map range)
+- Visual: Lightning glow + green dust puff on application, heal text on expire
+
+**Overflowing Care** (Ally buff)
+- Duration: 50 seconds (3000 ticks)
+- Heals 2 HP every second
+- When at full HP: Accumulates overheal
+- **Overheal Conversion**: Every 1.5 overheal = +1% Hydro damage (max +35%)
+- Applied to **ALL allies on the current map** (full map range)
+- Visual: Blue dust puff, "Overheal!" text when at max HP
+
+**Taryz Tracker** (Enemy debuff)
+- Duration: 50 seconds (3000 ticks)
+- Applied to primary target of Path of Protection
+- **Counterattack**: When tracked enemy **ATTACKS** an ally (hit OR miss):
+  - Deals 10-20 Hydro damage to tracked enemy
+  - Heals attacked ally for 30% of damage (6 HP)
+  - Triggers on attack attempt, not just successful damage
+- **Retargeting**: On tracked enemy death:
+  - Automatically retargets to enemy with highest current HP
+  - New target must not already have Taryz Tracker
+- Unremovable debuff
+- Visual: Lightning glow on application, "Taryz Strike!" text on counterattack, "Taryz Retarget!" text on retarget
+
 ## Hediff System (Hestia)
 
 ### Rend (Defense Shredder)

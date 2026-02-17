@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Hydro Shot Projectile (for Intel Manipulation ability) -->
+	<ThingDef ParentName="BaseProjectileNeolithic">
+		<defName>GFL_Projectile_RadianceHydroShot</defName>
+		<label>hydro shot</label>
+		<thingClass>GFL_Weap.Projectile_RadianceHydroShot</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(0.5, 0.8, 1.0)</color>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>GFL_HydroDamage</damageDef>
+			<speed>75</speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

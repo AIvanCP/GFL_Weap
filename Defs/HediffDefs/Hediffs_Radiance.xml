@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- False Intelligence Debuff -->
+	<HediffDef>
+		<defName>GFL_Hediff_FalseIntelligence</defName>
+		<label>false intelligence</label>
+		<description>Mind clouded by false information. +20% stagger chance, +10% Hydro damage taken. Uncleanseable.</description>
+		<hediffClass>GFL_Weap.Hediff_FalseIntelligence</hediffClass>
+		<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>2400</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDodgeChance>-0.2</MeleeDodgeChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Congestion Debuff -->
+	<HediffDef>
+		<defName>GFL_Hediff_Congestion</defName>
+		<label>congestion</label>
+		<description>Afflicted with total congestion. Cannot heal at all. Uncleanseable.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.4, 0.4, 0.7)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>1200</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<InjuryHealingFactor>0</InjuryHealingFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Damp Debuff (Stackable up to 2) -->
+	<HediffDef>
+		<defName>GFL_Hediff_Damp</defName>
+		<label>damp</label>
+		<description>Hydro energy dampens healing. -40% healing effectiveness per stack. At 2 stacks, transforms into Congestion.</description>
+		<hediffClass>GFL_Weap.Hediff_Damp</hediffClass>
+		<defaultLabelColor>(0.5, 0.7, 0.9)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>2</maxSeverity>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>900</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statFactors>
+					<InjuryHealingFactor>0.6</InjuryHealingFactor>
+				</statFactors>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<label>damp (critical)</label>
+				<statFactors>
+					<InjuryHealingFactor>0.2</InjuryHealingFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Deep-Rooted Bonds Buff -->
+	<HediffDef>
+		<defName>GFL_Hediff_DeepRootedBonds</defName>
+		<label>deep-rooted bonds</label>
+		<description>Bound by deep protection. Max HP doubled. On expiration, fully heals the bearer. Uncleanseable.</description>
+		<hediffClass>GFL_Weap.Hediff_DeepRootedBonds</hediffClass>
+		<defaultLabelColor>(0.4, 1.0, 0.8)</defaultLabelColor>
+		<isBad>false</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>2400</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<MaxHitPoints>2.0</MaxHitPoints>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!-- Overflowing Care Buff -->
+	<HediffDef>
+		<defName>GFL_Hediff_OverflowingCare</defName>
+		<label>overflowing care</label>
+		<description>Passively heals after actions. Overheal is converted to Hydro damage bonus (1.5% overheal = +1% Hydro damage, max +35%). Uncleanseable.</description>
+		<hediffClass>GFL_Weap.Hediff_OverflowingCare</hediffClass>
+		<defaultLabelColor>(0.3, 0.9, 1.0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<initialSeverity>0</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>2400</disappearsAfterTicks>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- Taryz Tracker Hediff (attached to enemy) -->
+	<HediffDef>
+		<defName>GFL_Hediff_TaryzTracker</defName>
+		<label>taryz tracking</label>
+		<description>Being tracked by Taryz. Will counterattack if this pawn attacks an ally. On death, Taryz retargets to another enemy.</description>
+		<hediffClass>GFL_Weap.Hediff_TaryzTracker</hediffClass>
+		<defaultLabelColor>(0.5, 0.8, 1.0)</defaultLabelColor>
+		<isBad>true</isBad>
+		<makesAlert>false</makesAlert>
+		<tendable>false</tendable>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>2400</disappearsAfterTicks>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- Confectance Index - Uses shared definition from Hediffs_Aglaea.xml -->
+
+</Defs>

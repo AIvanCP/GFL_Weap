@@ -51,12 +51,17 @@
 	<HediffDef>
 		<defName>GFL_Hediff_FrostTerrain</defName>
 		<label>frost terrain</label>
-		<description>Standing on frost terrain. Movement slowed by 10% and damage taken increased by 10%.</description>
+		<description>Standing on frost terrain. Movement slowed by 10% and damage taken increased by 10%. Disappears 2 seconds after leaving frost terrain.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.7, 0.7, 1.0)</defaultLabelColor>
 		<isBad>true</isBad>
 		<makesAlert>false</makesAlert>
 		<tendable>false</tendable>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>120</disappearsAfterTicks>
+			</li>
+		</comps>
 		<stages>
 			<li>
 				<capMods>

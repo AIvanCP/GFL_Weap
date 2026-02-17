@@ -92,20 +92,28 @@ namespace GFL_Weap
                     DamageInfo.SourceCategory.ThingOrUnknown
                 );
 
+                // Store references before damage (pawn might die)
+                Map targetMap = targetPawn.Map;
+                Vector3 targetDrawPos = targetPawn.DrawPos;
+                IntVec3 targetPos = targetPawn.Position;
+                
                 targetPawn.TakeDamage(dinfo);
 
-                // Apply Rend stacks
-                ApplyRendStacks(targetPawn, REND_STACKS_TO_APPLY);
+                // Apply Rend stacks (only if alive)
+                if (!targetPawn.Dead && targetPawn.health != null)
+                {
+                    ApplyRendStacks(targetPawn, REND_STACKS_TO_APPLY);
+                }
 
                 // Grant Confectance Index to caster
                 GrantConfectanceIndex(CasterPawn, CONFECTANCE_TO_GRANT);
 
-                // Visual effects
-                if (targetPawn.Map != null)
+                // Visual effects (check if pawn still exists)
+                if (targetMap != null && targetPawn.Spawned)
                 {
-                    FleckMaker.ThrowLightningGlow(targetPawn.DrawPos, targetPawn.Map, 1.5f);
-                    FleckMaker.ThrowDustPuffThick(targetPawn.Position.ToVector3Shifted(), targetPawn.Map, 1.0f, Color.red);
-                    MoteMaker.ThrowText(targetPawn.DrawPos, targetPawn.Map, $"{Mathf.RoundToInt(damage)} (firelight)", 2.5f);
+                    FleckMaker.ThrowLightningGlow(targetDrawPos, targetMap, 1.5f);
+                    FleckMaker.ThrowDustPuffThick(targetPos.ToVector3Shifted(), targetMap, 1.0f, Color.red);
+                    MoteMaker.ThrowText(targetDrawPos, targetMap, $"{Mathf.RoundToInt(damage)} (firelight)", 2.5f);
                 }
 
                 return true;

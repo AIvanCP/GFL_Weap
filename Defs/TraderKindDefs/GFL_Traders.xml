@@ -26,6 +26,14 @@
 				<thingDef>GFL_Weapon_Hestia</thingDef>
 				<countRange>0~1</countRange>
 			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Skylla</thingDef>
+				<countRange>0~1</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>GFL_Weapon_Radiance</thingDef>
+				<countRange>0~1</countRange>
+			</li>
 		</stockGenerators>
 	</TraderKindDef>
 
@@ -56,11 +64,19 @@
 				<thingDef>GFL_Weapon_Hestia</thingDef>
 				<countRange>0~1</countRange>
 			</li>
-			<li Class="StockGenerator_MarketValue">
-				<tradeTag>WeaponRanged</tradeTag>
-				<countRange>3~7</countRange>
-			</li>
-		</stockGenerators>
-	</TraderKindDef>
+		<li Class="StockGenerator_SingleDef">
+			<thingDef>GFL_Weapon_Skylla</thingDef>
+			<countRange>0~1</countRange>
+		</li>
+		<li Class="StockGenerator_SingleDef">
+			<thingDef>GFL_Weapon_Radiance</thingDef>
+			<countRange>0~1</countRange>
+		</li>
+		<li Class="StockGenerator_MarketValue">
+			<tradeTag>WeaponRanged</tradeTag>
+			<countRange>3~7</countRange>
+		</li>
+	</stockGenerators>
+</TraderKindDef>
 
 </Defs>

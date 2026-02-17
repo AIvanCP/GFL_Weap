@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Intel Manipulation Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_IntelManipulation</defName>
+		<label>Intel Manipulation</label>
+		<description>Launch a Hydro shot at an enemy (45 tiles). Deals 130% weapon damage and applies False Intelligence (2 turns) and Congestion (1 turn). Grants +1 Confectance Index to the user.</description>
+		<iconPath>UI/Icons/Abilities/IntelManipulation</iconPath>
+		<cooldownTicksRange>420</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_IntelManipulation</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.4</warmupTime>
+			<range>45</range>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- Path of Protection Ultimate Ability -->
+	<AbilityDef>
+		<defName>GFL_Ability_PathOfProtection</defName>
+		<label>Path of Protection</label>
+		<description>Create an AoE Hydro explosion at target enemy (45 tiles, radius 3). Deals 80% weapon damage and applies Damp + False Intelligence. Summons Taryz to follow the target for 2 rounds (counterattacks, retargets on death). Grants all allies Deep-Rooted Bonds (2× HP, heal on expire) and Overflowing Care (convert overheal to Hydro damage bonus). Heals allies and cleanses 1 negative effect.</description>
+		<iconPath>UI/Icons/Abilities/PathofProtection</iconPath>
+		<cooldownTicksRange>1800</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<statBases>
+			<Ability_EffectRadius>3</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<verbClass>GFL_Weap.Verb_PathOfProtection</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>1.0</warmupTime>
+			<range>45</range>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

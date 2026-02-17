@@ -127,12 +127,16 @@ namespace GFL_Weap
                     DamageInfo.SourceCategory.ThingOrUnknown
                 );
 
+                // Store position before damage
+                Map pawnMap = pawn.Map;
+                Vector3 pawnDrawPos = pawn.DrawPos;
+                
                 pawn.TakeDamage(dinfo);
 
-                // Visual feedback - show damage number
-                if (pawn.Map != null)
+                // Visual feedback - show damage number (use stored references)
+                if (pawnMap != null)
                 {
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, $"-{Mathf.RoundToInt(totalDamage)} (burn)", 1.9f);
+                    MoteMaker.ThrowText(pawnDrawPos, pawnMap, $"-{Mathf.RoundToInt(totalDamage)} (burn)", 1.9f);
                 }
             }
             catch (Exception ex)
